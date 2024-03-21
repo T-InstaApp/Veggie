@@ -15,6 +15,7 @@ import com.instaapp.veggietemp1.ui.theme.VegiesTemp1Theme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // test commit
         setContent {
             VegiesTemp1Theme {
                 // A surface container using the 'background' color from the theme
