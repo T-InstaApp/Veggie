@@ -285,7 +285,7 @@ class Home : AppCompatActivity(), HomeListener, KodeinAware {
             }
         }
     }
-
+    @Suppress("UNCHECKED_CAST")
     @SuppressLint("SetTextI18n")
     override fun <T> onSuccessData(dataG: T, type: String) {
         binding.progressBar.progressLayout.visibility = View.GONE
