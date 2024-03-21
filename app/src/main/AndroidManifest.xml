@@ -7,7 +7,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/logo"
-        android:label="Veggie_1"
+        android:label="Veggie_2"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.VeggieTemp1"
@@ -15,7 +15,7 @@
         <activity
             android:name="com.instaapp.veggietemp1.MainActivity"
             android:exported="true"
-            android:label="Veggie_1"
+            android:label="Veggie_2"
             android:theme="@style/Theme.VeggieTemp1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
