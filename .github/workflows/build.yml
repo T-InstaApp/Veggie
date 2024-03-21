@@ -16,6 +16,13 @@ jobs:
       email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,niraj07.k@gmail.com
 
     steps:
+      - name: Restore Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -28,25 +35,32 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
 
-      # Parallelize these steps
       - name: Update AndroidManifest.xml
         run: |
-          sed -i "s/android:label=\"[^\"]*\"/android:label=\"${{ env.apk_name }}\"/" app/src/main/AndroidManifest.xml &
+          sed -i "s/android:label=\"[^\"]*\"/android:label=\"${{ env.apk_name }}\"/" app/src/main/AndroidManifest.xml
+
       - name: Determine current version
         id: determine_version
         run: |
-          NEW_VERSION="${{ env.APK_VERSION }}"
+          # Set a new version value here
+          NEW_VERSION="${{ env.APK_VERSION }}"  # Change this to your desired version
           echo "New Version: $NEW_VERSION"
-          echo "CURRENT_VERSION=$NEW_VERSION" >> $GITHUB_ENV &
+          echo "CURRENT_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+
+
       - name: Update versionName in build.gradle.kts
         run: |
-          NEW_VERSION="${{ env.APK_VERSION }}"
-          sed -i "s/versionName \".*\"/versionName \"$NEW_VERSION\"/" app/build.gradle.kts
-        working-directory: ${{ github.workspace }} &
+         NEW_VERSION="${{ env.APK_VERSION }}"
+         sed -i "s/versionName \".*\"/versionName \"$NEW_VERSION\"/" app/build.gradle.kts
+        working-directory: ${{ github.workspace }}
 
-      # Wait for all parallel steps to finish before proceeding
-      - name: Wait for parallel steps to finish
-        run: wait
+      - name: Commit changes and push
+        run: |
+          git config --local user.email "hello@instaapp.online"
+          git config --local user.name "T-InstaApp"
+          git add .
+          git commit -m "Update versionName to ${{ steps.determine_version.outputs.CURRENT_VERSION }}"
+          git push --force
 
       - name: Build APK
         run: ./gradlew assembleDebug
@@ -87,6 +101,28 @@ jobs:
           asset_content_type: application/vnd.android.package-archive
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Save Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+
+      # - name: Send Email Notification
+      #   if: ${{ success() }}
+      #   uses: dawidd6/action-send-mail@v3
+      #   with:
+      #     server_address: smtp.gmail.com
+      #     server_port: 465
+      #     username: instaapp.online@gmail.com
+      #     password: ${{ secrets.GMAIL_TOKEN }}
+      #     from: instaapp.online@gmail.com
+      #     subject: APK Build Notification
+      #     body: |
+      #       Here is the link to download the APK:
+      #       ${{ steps.upload_apk.outputs.browser_download_url }}
+      #     to: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,vaishnavi.charde@tissatech.com
 
       - name: Call API
         run: |
