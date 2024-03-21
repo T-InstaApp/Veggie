@@ -34,8 +34,8 @@ private const val DELAY_TIME = 1000
 class SplashActivity : AppCompatActivity(), KodeinAware,
     HomeListener {//InAppUpdateManager.InAppUpdateHandler
 
-    var topAnim: Animation? = null
-    var bottomAnim: Animation? = null
+    // var topAnim: Animation? = null
+    // var bottomAnim: Animation? = null
     private lateinit var binding: ActivitySplashBinding
 
     override val kodein by kodein()
@@ -57,8 +57,8 @@ class SplashActivity : AppCompatActivity(), KodeinAware,
         viewModel = ViewModelProvider(this, factory)[HomeViewModel::class.java]
         viewModel.homeListener = this
 
-        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation)
-        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
+        // topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation)
+        // bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
 
 
         activityResultLauncher =
@@ -71,7 +71,7 @@ class SplashActivity : AppCompatActivity(), KodeinAware,
                 }
             }
 
-      //  inAppUpdate()
+        //  inAppUpdate()
 
         dialogShowMsg()
 
@@ -89,8 +89,8 @@ class SplashActivity : AppCompatActivity(), KodeinAware,
             binding.txtAppName.text =
                 PreferenceProvider(applicationContext).getStringValue(PreferenceKey.APP_NAME)
         }
-        binding.txtAppLogo.animation = topAnim
-        binding.txtAppName.animation = bottomAnim
+        // binding.txtAppLogo.animation = topAnim
+        // binding.txtAppName.animation = bottomAnim
 
         Handler(Looper.getMainLooper()).postDelayed({
             log(
@@ -167,31 +167,31 @@ class SplashActivity : AppCompatActivity(), KodeinAware,
         finish()
     }
 
-  /*  fun inAppUpdate() {
-        log("inAppUpdate ", " Called ")
-        val appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
-        val appUpdateInfoTask = appUpdateManager.appUpdateInfo
-        appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
-            ) {
-                log("inAppUpdate ", " Update Available ")
-                appUpdateManager.startUpdateFlowForResult(
-                    // Pass the intent that is returned by 'getAppUpdateInfo()'.
-                    appUpdateInfo,
-                    // an activity result launcher registered via registerForActivityResult
-                    activityResultLauncher,
-                    // Or pass 'AppUpdateType.FLEXIBLE' to newBuilder() for
-                    // flexible updates.
-                    AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE)
-                        .setAllowAssetPackDeletion(true)
-                        .build()
-                )
-            } else {
-                dialogShowMsg()
-                log("inAppUpdate ", " Update Not Available ")
-            }
-        }
-    }*/
+    /*  fun inAppUpdate() {
+          log("inAppUpdate ", " Called ")
+          val appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
+          val appUpdateInfoTask = appUpdateManager.appUpdateInfo
+          appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
+              if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                  && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
+              ) {
+                  log("inAppUpdate ", " Update Available ")
+                  appUpdateManager.startUpdateFlowForResult(
+                      // Pass the intent that is returned by 'getAppUpdateInfo()'.
+                      appUpdateInfo,
+                      // an activity result launcher registered via registerForActivityResult
+                      activityResultLauncher,
+                      // Or pass 'AppUpdateType.FLEXIBLE' to newBuilder() for
+                      // flexible updates.
+                      AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE)
+                          .setAllowAssetPackDeletion(true)
+                          .build()
+                  )
+              } else {
+                  dialogShowMsg()
+                  log("inAppUpdate ", " Update Not Available ")
+              }
+          }
+      }*/
 
 }

@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/banner"
     android:gravity="center"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:background="#FFF"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/content_description"
+            android:src="@drawable/logo" />
+
+    </RelativeLayout>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/txtAppLogo"
@@ -18,7 +32,6 @@
         android:id="@+id/txtAppName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/splash_img"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
@@ -35,9 +48,10 @@
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="@dimen/_50sdp"
         android:layout_height="@dimen/_50sdp"
-        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_50sdp"
         android:indeterminateDrawable="@drawable/rotating_icon"
         android:progress="1"
-        android:layout_marginTop="@dimen/_120sdp"
-        android:visibility="visible" />
-</LinearLayout>
+        android:visibility="gone" />
+</RelativeLayout>
