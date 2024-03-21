@@ -1,0 +1,289 @@
+<resources>
+    <!--<string name="app_name">Yashaswini Fresh</string>-->
+     <string name="app_name">Yashaswini Fresh</string>
+    <string name="title_activity_dashbord">Dashbord</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_menu">Menu</string>
+    <string name="menu_profile">Profile</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="menu_orders">Order List</string>
+    <string name="cart">Cart</string>
+    <string name="menu_aboutus">About Us</string>
+    <string name="menu_contactus">Contact Us</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_log_out">Log Out</string>
+    <string name="menu_login">Login</string>
+
+    //////////
+    <string name="home">Home</string>
+
+    <string name="Orders">Orders</string>
+    <string name="More">More</string>
+    <string name="dialog_tip_delivery_person">Please tip your service person</string>
+    <string name="dialog_tip_100_optional">100% of tips go to your waiter. Tips are always optional</string>
+    <string name="search_for_menu">Search our menu</string>
+    <string name="back_to_home">Back to home</string>
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin
+        \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin
+    </string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <!--Billing address-->
+    <string name="name">Full name<font fgcolor="#ff0000"> * </font></string>
+    <string name="address">Address line<font fgcolor="#ff0000"> * </font></string>
+    <string name="house_no">Apt number<font fgcolor="#ff0000"> * </font></string>
+    <string name="zip_postal">Zip/Postal code<font fgcolor="#ff0000"> * </font></string>
+    <string name="city">City<font fgcolor="#ff0000"> * </font></string>
+    <string name="country">Country<font fgcolor="#ff0000"> * </font></string>
+    <string name="state">State<font fgcolor="#ff0000"> * </font></string>
+    <string name="pls_enter_state">Please enter state</string>
+    <string name="building_name">Building/Society<font fgcolor="#ff0000"> * </font></string>
+    <string name="please_enter_building_name">Please enter Building/Society</string>
+    <string name="next">Next</string>
+    <string name="current_address">Use Existing Address </string>
+    <string name="note_for_address">Note: If using a new address, uncheck the current one and fill in the fields below</string>
+
+    <!--Payment -->
+    <string name="payment_method">Payment method</string>
+    <string name="payment">Card details</string>
+    <string name="payment_details">Payment Details</string>
+    <string name="card_holder">Card holder name<font fgcolor="#ff0000"> * </font></string>
+    <string name="credit_card_no">Card number<font fgcolor="#ff0000"> * </font></string>
+    <string name="recognize_delivery_person_effort">Want to recognize your waiter efforts? Consider a
+        larger tip as thank you- 100% of the tip goes to them. </string>
+    <string name="security_code">CVV<font fgcolor="#ff0000"> * </font></string>
+    <string name="exp_date">Expiration date<font fgcolor="#ff0000"> * </font></string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="extra_annotation">Special instruction for order</string>
+    <string name="tax">Tax</string>
+    <string name="tip">Tip</string>
+    <string name="discount">Discount</string>
+    <string name="service_fee">Service fee</string>
+    <string name="shipping_fee">Shipping Fee</string>
+    <string name="card_name_allow_char">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz</string>
+
+    <!--OrderListResponse-->
+    <string name="view_order_details">View order details</string>
+    <string name="purchase_details">Purchase details</string>
+    <string name="are_you_sure_want_to_logout">Are you sure \n want to logout?</string>
+    <string name="Session_first_line">Session has been expired.</string>
+    <string name="Session_second_line">Please login again</string>
+    <!-- Registration Screen -->
+    <string name="firstName">First name</string>
+    <string name="salutation">Salutation<font fgcolor="#ff0000"> * </font></string>
+    <string name="username">Username</string>
+    <string name="lastName">Last name</string>
+    <string name="Email">Email</string>
+    <string name="pasword">Password</string>
+    <string name="c_pasword">Confirm password</string>
+    <string name="signUp">Sign Up</string>
+    <string name="m_no">Mobile number</string>
+    <string name="country_code">Country code<font fgcolor="#ff0000"> * </font></string>
+    <string name="already_registered">Already registered? Login</string>
+
+    <!-- profile -->
+    <string name="enter_f_name">Enter first name</string>
+    <string name="enter_u_name">Enter username</string>
+    <string name="enter_l_name">Enter last name</string>
+    <string name="enter_Email">Enter email address</string>
+    <string name="change_pswd">Change Password</string>
+
+    <!-- Toasts -->
+    <string name="work_in_progress">Work in progress</string>
+    <string name="no_more_data_available">No more data available</string>
+    <string name="req_time_out">Request timeout</string>
+    <string name="registration_done">Registration is done successfully</string>
+    <string name="credential_wrong">Username or password is incorrect</string>
+    <string name="email_not_verified">Please verify your login credential by logging into your email.</string>
+    <string name="password_snt">Password reset email has been sent</string>
+    <string name="username_snt">Username reset email has been sent</string>
+    <string name="email_pass_wrong">Please check credential. Username or password is incorrect</string>
+    <string name="pass_email">Enter email</string>
+    <string name="pass_username">Enter username</string>
+    <string name="pass_zip_code">Enter zip code</string>
+    <string name="no_items_in_cart">No items available in the cart</string>
+    <string name="item_deleted">Item deleted successfully</string>
+    <string name="no_items_to_place_order">No items available in the cart to place order</string>
+    <string name="no_order_available">No order available</string>
+    <string name="no_response">"The system is temporarily unavailable. Please try again later"</string>
+    <string name="otp_send_successfully">"OTP sent successfully on your given number"</string>
+    <string name="incorrect_cart_details">"Incorrect card details. Please check"</string>
+    <string name="user_already_present">"User with same username already present"</string>
+    <string name="email_already_present">"User exist in system with same email or username."</string>
+    <string name="no_store_available">"No store available for your location"</string>
+    <string name="no_product_available_for_order">"No product available for this order"</string>
+    <string name="logout">"User logout successfully"</string>
+    <string name="no_catagories">"No Menu available in this category"</string>
+    <string name="product_added_into_cart">"Product added successfully into the cart"</string>
+    <string name="order_placed">"Order placed successfully"</string>
+    <string name="login_first">"Please login"</string>
+    <string name="session_expire">"Session expire. Please login again"</string>
+    <string name="no_product_for_search">"No product found for given search"</string>
+    <string name="no_store_for_search">"No store found for given search</string>
+    <string name="order_cancl">Order cancel successfully"</string>
+    <string name="select_tip_option">Select atleast one Tip option</string>
+    <string name="razor_payment_failed">Order Payment failed for Order #</string>
+    <string name="checkbox_select_msg">Please select Ingredient first</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="send_otp">Send OTP</string>
+    <string name="enter_otp_validate">Enter OTP</string>
+    <!-- change Password -->
+
+    <string name="current_pass">Current password</string>
+    <string name="new_pass">New password</string>
+    <string name="confirm_pass">Confirm password</string>
+    <string name="dialog_cancel_order_txt">Are you sure you want to cancel?</string>
+    <string name="dialog_delete_item_txt">Are you sure you want to delete?</string>
+
+    <string name="logincheck">Please login to continue</string>
+    <string name="rest_closed">Sorry, we are closed!</string>
+    <!--<string name="logincheck">Please login to continue. We can\&#39;t let just anyone have this access to ordering!</string>-->
+    <string name="serchmassage">No menu found for given search</string>
+    <string name="change_password">Change Password</string>
+    <string name="old_password">Old Password<font fgcolor="#ff0000"> * </font></string>
+    <string name="new_password">New Password<font fgcolor="#ff0000"> * </font></string>
+    <string name="confirm_password">Confirm Password<font fgcolor="#ff0000"> * </font></string>
+    <string name="open_hours">Open Hours</string>
+    <string name="guest_user">Guest User</string>
+    <string name="guest_login">Guest Login</string>
+    <string name="cancel">Cancel</string>
+    <string name="menu">Menu</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="password">Password<font fgcolor="#ff0000"> * </font></string>
+    <string name="forgot_username">Forgot Username?</string>
+    <string name="user_name">Username<font fgcolor="#ff0000"> * </font></string>
+    <string name="menu_list">Menu list</string>
+    <string name="view_cart">View Cart</string>
+    <string name="order_details">Order Details</string>
+    <string name="order_no">Order No.</string>
+    <string name="restaurant">Restaurant</string>
+    <string name="order_date">Order Date</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="order_total">Order Total</string>
+    <string name="billing_address">Billing Address</string>
+    <string name="orders">Orders</string>
+    <string name="profile">Profile</string>
+    <string name="first_name">First Name<font fgcolor="#ff0000"> * </font></string>
+    <string name="last_name">Last Name<font fgcolor="#ff0000"> * </font></string>
+    <string name="code">Code</string>
+    <string name="mobile">Mobile<font fgcolor="#ff0000"> * </font></string>
+    <string name="email">Email<font fgcolor="#ff0000"> * </font></string>
+    <string name="email_id">Email</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="update_password"><u>Update Password</u></string>
+    <string name="sign_up_to_continue">Signup to Continue</string>
+    <string name="shipping_address">Shipping Address</string>
+    <string name="card">Card</string>
+    <string name="cash">Cash</string>
+    <string name="card_details">Card Details</string>
+    <string name="card_holder_name">Card Holder Name</string>
+    <string name="card_number">Card Number</string>
+    <string name="cvv">CVV</string>
+    <string name="expiration_date">Expiration Date</string>
+    <string name="special_instruction">Special Instruction</string>
+    <string name="apply_coupon">Apply Coupon</string>
+    <string name="apply">Apply</string>
+    <string name="delivery_fee">Delivery Fee</string>
+    <string name="total">Total</string>
+    <string name="place_order">Place Order</string>
+
+    <string name="card_holder_name_validate">Enter card holder name</string>
+    <string name="card_no_validate">Enter card number</string>
+    <string name="security_code_validate">Enter security code</string>
+    <string name="month_validate">Enter month</string>
+    <string name="year_validate">Enter year</string>
+    <string name="coupon_validate">Please enter coupon code</string>
+    <string name="four_toppings_limit">You can\'t choose more than 4 toppings</string>
+    <string name="_1">+1</string>
+    <string name="content_description">Content Description</string>
+    <string name="please_select_salutation">Please select salutation</string>
+    <string name="please_enter_username">Please enter username</string>
+    <string name="please_enter_first_name">Please enter first name</string>
+    <string name="please_enter_last_name">Please enter last name</string>
+    <string name="please_enter_email">Please enter email</string>
+    <string name="_8888888888">8888888888</string>
+    <string name="please_enter_password">Please enter password</string>
+    <string name="please_enter_confirm_password">Please enter confirm password</string>
+    <string name="_91">+1</string>
+    <string name="login_as_guest"><u>Login as guest</u></string>
+    <string name="new_user_signup"><u>New user? signup</u></string>
+    <string name="password_reset">Password Reset</string>
+    <string name="username_reset">Username Reset</string>
+    <string name="ok">OK</string>
+    <string name="login_here"><u>Login here</u></string>
+    <string name="_12">12</string>
+    <string name="size_please_select_any_option">Size(Please select any option)</string>
+    <string name="special_instructions">Special Instructions</string>
+    <string name="please_enter_your_full_name">Please enter your full name</string>
+    <string name="please_enter_your_address">Please enter your address</string>
+    <string name="enter_apt_no">Enter apt no.</string>
+    <string name="please_enter_zip_postal_code">Please enter postal code</string>
+    <string name="please_enter_country">Please enter country</string>
+    <string name="please_enter_province">Please enter state</string>
+    <string name="please_enter_city">Please enter city</string>
+    <string name="use_shipping_address_for_billing">Use shipping address for billing</string>
+    <string name="please_enter_card_holder_name">Please enter card holder name</string>
+    <string name="please_enter_card_no">Please enter card no</string>
+    <string name="please_enter_cvv">Please enter CVV</string>
+    <string name="please_enter_coupon_code">Please enter coupon code</string>
+    <string name="change">CHANGE</string>
+    <string name="submit">Submit</string>
+    <string name="office_address">Office Address</string>
+    <string name="update">Update</string>
+    <string name="please_enter_old_password">Please enter old password</string>
+    <string name="please_enter_new_password">Please enter new password</string>
+    <string name="loading">Loading...</string>
+    <string name="search_menu">Search menu</string>
+    <string name="done">Done</string>
+    <string name="show_availability"><u>Show Availability</u></string>
+    <string name="check_open_hours"><u>Check Open Hours</u></string>
+    <string name="please_enter_mobile">Please enter mobile no.</string>
+    <string name="alert">Alert</string>
+    <string name="enter_your_email">Enter your email id</string>
+    <string name="enter_your_user_name">Enter your username</string>
+    <string name="h_no_internet">No Internet</string>
+    <string name="no_internet">No internet connection available, Please make sure your device is connected to the internet</string>
+    <string name="h_login_401">Unauthorized Access</string>
+    <string name="login_401">Unable to log in with provided credentials,Please check and retry</string>
+    <string name="warning">Unauthorized Access</string>
+    <string name="warning2">Warning</string>
+    <string name="login_400">Your email id/username is already used in InstaApp application for one of the restaurant. You can login to Insta App or register with new email id/username</string>
+    <string name="no_restro_access">You do not have access to restaurant.</string>
+    <string name="h_login_403">Access Denied</string>
+    <string name="confirm_user">You do not have access to this restaurant. If you want to login for this restaurant please click on OK.</string>
+    <string name="congratulations">Congratulations</string>
+    <string name="password_reset_success">Password reset email has been sent on register email id</string>
+    <string name="username_reset_success">Username reset email has been sent on register email id</string>
+    <string name="enter_otp">Enter OTP here</string>
+    <string name="qty">QTY : %s</string>
+    <string name="note"><b>Note -</b> %s</string>
+    <string name="size_bind">Size :%s</string>
+    <string name="pickup">Pickup</string>
+    <string name="add_new_address">Add New Address</string>
+    <string name="only_delivery">You cannot choose Pickup Mode since you have a Delivery deal in your cart</string>
+    <string name="only_pickup">You cannot choose Delivery Mode since you have a collection deal in your cart.</string>
+    <string name="no_shipping_available">No shipping method available</string>
+    <string name="cancel_coupon">Cancel coupon</string>
+    <string name="add_new_address_h">Add New Address</string>
+    <string name="google_places_api_key">AIzaSyCT4Ks8zytEomcp-Q-WhAY4swAg4dhGlSw</string>
+
+    <string name="full_name">Full Name</string>
+    <string name="address_line">Address line</string>
+    <string name="apt_no">Apt No.</string>
+    <string name="zip_postal_code">Zip/Postal code</string>
+    <string name="registration_success"><b>Registration has been done successfully.</b>\nWe sent you an email for account verification</string>
+    <string name="password_change_successfully">Your password has been successfully changed!</string>
+    <string name="delete">Delete</string>
+    <string name="current_password">Current password<font fgcolor="#ff0000"> * </font></string>
+    <string name="enter_current_password">Enter current password</string>
+    <string name="enter_new_password">Enter new password</string>
+    <string name="enter_confirm_password">Enter confirm password</string>
+    <string name="change_your_password"><u>Change Your Password</u></string>
+    <string name="use_existing_address">Use Existing Address</string>
+
+</resources>

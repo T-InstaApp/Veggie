@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="orderDetailsData"
+            type="com.instaapp.yashaswinifresh.network.responseModel.OrderListResponse" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:backgroundColor="@color/menu_details_background"
+            tools:context=".activity.OrderDetailScreen">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_with_cart" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-35dp"
+
+                android:background="@drawable/background_rectangledeail">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:id="@+id/txt_view_order_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="@string/view_order_details"
+                            android:textColor="@color/heading_color"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <RelativeLayout
+                            android:id="@+id/rl_order_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txt_view_order_details"
+                            android:layout_marginLeft="@dimen/_7sdp"
+                            android:layout_marginRight="@dimen/_7sdp"
+                            android:padding="@dimen/_7sdp">
+
+                            <LinearLayout
+                                android:id="@+id/ll_no"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="@dimen/_130sdp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_semibold"
+                                    android:text="@string/order_no"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/txt_order_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:text="@{orderDetailsData.order.order_id.toString()}"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_retrourent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ll_no"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="@dimen/_130sdp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_semibold"
+                                    android:text="@string/restaurant"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/txt_retrourent_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:text="@{orderDetailsData.restaurant.name}"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ll_retrourent"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="@dimen/_130sdp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_semibold"
+                                    android:text="@string/order_date"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/txt_order_date"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:dateFormat="@{orderDetailsData.created_at}" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_sub_total"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ll_date"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="@dimen/_130sdp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_semibold"
+                                    android:text="@string/subtotal"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/txt_sub_total"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:setPriceWithCurrency="@{orderDetailsData.order.subtotal}" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_tip"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ll_sub_total"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="@dimen/_130sdp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_semibold"
+                                    android:text="Tip"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/txt_tip"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:setPriceWithCurrency="@{orderDetailsData.order.tip}" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_tax"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ll_tip"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:orientation="horizontal"
+                                android:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="@dimen/_130sdp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_semibold"
+                                    android:text="Tax"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/txt_tax"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:setPriceWithCurrency="@{orderDetailsData.order.tax}" />
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/ll_delivery"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ll_tax"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="@dimen/_130sdp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_semibold"
+                                    android:text="Delivery Fee"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/txt_delivery"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:setPriceWithCurrency="@{orderDetailsData.order.shipping_fee}" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_discount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ll_delivery"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:orientation="horizontal"
+                                android:visibility="visible">
+
+                                <TextView
+                                    android:layout_width="@dimen/_125sdp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_semibold"
+                                    android:text="Discount"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:layout_width="@dimen/_5sdp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:text="- "
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/txt_discount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:setPriceWithCurrency="@{orderDetailsData.order.discount}" />
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/ll_total"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ll_discount"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="@dimen/_130sdp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_bold"
+                                    android:text="@string/order_total"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+
+                                <TextView
+                                    android:id="@+id/txt_order_total"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_bold"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:setPriceWithCurrency="@{orderDetailsData.order.total}" />
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/rl_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rl_order_details"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            app:cardBackgroundColor="@color/graye_light">
+
+                            <LinearLayout
+                                android:id="@+id/ll_address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtAddressHeading"
+                                    android:layout_width="@dimen/_130sdp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_bold"
+                                    android:text="@string/billing_address"
+                                    android:textColor="@color/heading_color"
+                                    android:textSize="@dimen/_12sdp" />
+
+                                <TextView
+                                    android:id="@+id/txtAddress"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rl_address"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            app:cardBackgroundColor="@color/menu_details_background">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recycler_my_order_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+
+                </androidx.core.widget.NestedScrollView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/progress"
+            layout="@layout/progress_dialog_layout" />
+    </RelativeLayout>
+</layout>

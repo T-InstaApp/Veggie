@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "827032334485",
+    "project_id": "yashaswini-fresh",
+    "storage_bucket": "yashaswini-fresh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827032334485:android:08a0662f80ed0785c6eb9c",
+        "android_client_info": {
+          "package_name": "com.instaapp.yashaswinifresh"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnqzgVVEJmbuFOBgydG_XJtAwSpfJaI6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

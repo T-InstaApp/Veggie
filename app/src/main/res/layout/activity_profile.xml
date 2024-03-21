@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="profileData"
+            type="com.instaapp.yashaswinifresh.network.responseModel.ProfileResult" />
+
+        <variable
+            name="updateProfileData"
+            type="com.instaapp.yashaswinifresh.viewModel.AuthViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical"
+                tools:context=".activity.ProfileActivity">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@+id/toolBar"
+                        layout="@layout/toolbar_with_cart" />
+
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-50sp"
+                    app:cardCornerRadius="@dimen/_100sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/profile_gradient_color"
+                        android:src="@drawable/icon_profile">
+
+                    </androidx.appcompat.widget.AppCompatImageView>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="@string/salutation"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/heading_color"
+                    android:textSize="@dimen/_12sdp" />
+
+                <EditText
+                    android:id="@+id/profile_salutation"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginHorizontal="@dimen/_8sdp"
+                    android:layout_marginVertical="5dp"
+                    android:autofillHints=""
+                    android:background="@drawable/rounded_corner_rectangle"
+                    android:drawableEnd="@drawable/ic_down"
+                    android:drawableTint="@color/white"
+                    android:elevation="@dimen/_3sdp"
+                    android:enabled="false"
+                    android:focusable="false"
+                    android:fontFamily="@font/nunito_regular"
+                    android:hint="@string/salutation"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences|textPersonName"
+                    android:maxLength="15"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="@={updateProfileData.salutation}"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/hintGray"
+                    android:textSize="@dimen/_12sdp"
+                    app:SetEditTextValue="@{``+profileData.salutation}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="@string/user_name"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/heading_color"
+                    android:textSize="@dimen/_12sdp" />
+
+                <EditText
+                    android:id="@+id/etUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginHorizontal="@dimen/_8sdp"
+                    android:layout_marginVertical="5dp"
+                    android:autofillHints=""
+                    android:background="@drawable/rounded_corner_rectangle"
+                    android:clickable="false"
+                    android:drawableEnd="@drawable/ic_down"
+                    android:drawableTint="@color/white"
+                    android:elevation="@dimen/_3sdp"
+                    android:focusable="false"
+                    android:fontFamily="@font/nunito_regular"
+                    android:hint="@string/username"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences|textPersonName"
+                    android:maxLength="25"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="@={updateProfileData.userName}"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/hintGray"
+                    android:textSize="@dimen/_12sdp"
+                    app:SetEditTextValue="@{``+profileData.customer.username}" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="@string/first_name"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/heading_color"
+                    android:textSize="@dimen/_12sdp" />
+
+                <EditText
+                    android:id="@+id/profile_fname"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginHorizontal="@dimen/_8sdp"
+                    android:layout_marginVertical="5dp"
+                    android:autofillHints=""
+                    android:background="@drawable/rounded_corner_rectangle"
+                    android:drawableEnd="@drawable/ic_down"
+                    android:drawableTint="@color/white"
+                    android:elevation="@dimen/_3sdp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:hint="@string/please_enter_first_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences|textPersonName"
+                    android:maxLength="25"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="@={updateProfileData.firstName}"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/hintGray"
+                    android:textSize="@dimen/_12sdp"
+                    app:SetEditTextValue="@{``+profileData.customer.first_name}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="@string/last_name"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/heading_color"
+                    android:textSize="@dimen/_12sdp" />
+
+                <EditText
+                    android:id="@+id/profile_lname"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginHorizontal="@dimen/_8sdp"
+                    android:layout_marginVertical="5dp"
+                    android:autofillHints=""
+                    android:background="@drawable/rounded_corner_rectangle"
+                    android:drawableEnd="@drawable/ic_down"
+                    android:drawableTint="@color/white"
+                    android:elevation="@dimen/_3sdp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:hint="@string/please_enter_last_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences|textPersonName"
+                    android:maxLength="25"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="@={updateProfileData.lastName}"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/hintGray"
+                    android:textSize="@dimen/_12sdp"
+                    app:SetEditTextValue="@{``+profileData.customer.last_name}" />
+
+                <LinearLayout
+                    android:id="@+id/ll_phn_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_8sdp"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="@string/country_code"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/heading_color"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <EditText
+                            android:id="@+id/profile_country"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginHorizontal="@dimen/_8sdp"
+                            android:layout_marginVertical="5dp"
+                            android:autofillHints=""
+                            android:background="@drawable/rounded_corner_rectangle"
+                            android:digits="+-0123456789"
+                            android:drawableEnd="@drawable/ic_down"
+                            android:drawableTint="@color/white"
+                            android:elevation="@dimen/_3sdp"
+                            android:enabled="false"
+                            android:focusable="false"
+                            android:fontFamily="@font/nunito_regular"
+                            android:hint="@string/_91"
+                            android:imeOptions="actionNext"
+                            android:inputType="number|text"
+                            android:maxLength="5"
+                            android:paddingHorizontal="@dimen/_5sdp"
+                            android:text="@={updateProfileData.code}"
+                            android:textColor="@color/text_color"
+                            android:textColorHint="@color/hintGray"
+                            android:textSize="@dimen/_12sdp"
+                            app:SetEditTextValue="@{``+profileData.code}" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_8sdp"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="@string/mobile"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/heading_color"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <EditText
+                            android:id="@+id/profile_mobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginHorizontal="@dimen/_8sdp"
+                            android:layout_marginVertical="5dp"
+                            android:autofillHints=""
+                            android:background="@drawable/rounded_corner_rectangle"
+                            android:digits="0123456789"
+                            android:drawableEnd="@drawable/ic_down"
+                            android:drawableTint="@color/white"
+                            android:elevation="@dimen/_3sdp"
+                            android:fontFamily="@font/nunito_regular"
+                            android:hint="@string/_8888888888"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="13"
+                            android:paddingHorizontal="@dimen/_5sdp"
+                            android:text="@={updateProfileData.mobile}"
+                            android:textColor="@color/text_color"
+                            android:textColorHint="@color/hintGray"
+                            android:textSize="@dimen/_12sdp"
+                            app:SetEditTextValue="@{``+profileData.phone}" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="@string/email"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/heading_color"
+                    android:textSize="@dimen/_12sdp" />
+
+                <EditText
+                    android:id="@+id/profile_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginHorizontal="@dimen/_8sdp"
+                    android:layout_marginVertical="5dp"
+                    android:autofillHints=""
+                    android:background="@drawable/rounded_corner_rectangle"
+                    android:clickable="false"
+                    android:drawableEnd="@drawable/ic_down"
+                    android:drawableTint="@color/white"
+                    android:elevation="@dimen/_3sdp"
+                    android:focusable="false"
+                    android:fontFamily="@font/nunito_regular"
+                    android:hint="@string/please_enter_email"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="30"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="@={updateProfileData.email}"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/hintGray"
+                    android:textSize="@dimen/_12sdp"
+                    app:SetEditTextValue="@{``+profileData.customer.email}" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/profile_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/rect_button_background"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/update_profile"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+
+                    android:id="@+id/profile_change_pass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="@string/update_password"
+                    android:textColor="@color/new_theme_blue"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/txtDeleteYourAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="@dimen/_12sdp"
+                    android:elevation="@dimen/_3sdp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="@string/delete_account"
+                    android:textColor="@color/allinone"
+                    android:textSize="@dimen/_12sdp" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <include
+                android:id="@+id/progress"
+                layout="@layout/progress_dialog_layout" />
+        </RelativeLayout>
+    </ScrollView>
+
+</layout>

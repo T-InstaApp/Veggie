@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="menu_array_registered">
+        <item>Menu</item>
+        <item>Profile</item>
+        <item>Order List</item>
+        <item>Cart</item>
+        <item>About Us</item>
+        <item>Contact Us</item>
+        <item>Log Out</item>
+        <item>Delete Account</item>
+    </string-array>
+    <string-array name="menu_array_guest">
+        <item>Menu</item>
+        <item>Order List</item>
+        <item>Cart</item>
+        <item>About Us</item>
+        <item>Contact Us</item>
+        <item>Log Out</item>
+    </string-array>
+
+    <string-array name="menu_array_logged_out">
+        <item>Menu</item>
+        <item>About Us</item>
+        <item>Contact Us</item>
+        <item>Login</item>
+    </string-array>
+</resources>

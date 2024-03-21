@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    android:background="@drawable/dialog_curve">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_curve"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingRight="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/txtHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/password_reset"
+            android:textColor="@color/normal_text_color"
+            android:textSize="@dimen/_12sdp" />
+
+
+        <TextView
+            android:id="@+id/txtInputHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:fontFamily="@font/nunito_semibold"
+            android:text="@string/user_name"
+            android:textAlignment="textStart"
+            android:textColor="@color/heading_color"
+            android:textSize="@dimen/_12sdp" />
+
+        <EditText
+            android:id="@+id/etInputData"
+            android:layout_width="match_parent"
+            android:layout_marginVertical="5dp"
+            android:autofillHints=""
+            android:background="@drawable/rounded_corner_rectangle"
+            android:drawableEnd="@drawable/ic_down"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/nunito_regular"
+            android:hint="@string/please_enter_username"
+            android:imeOptions="actionNext"
+            android:inputType="textCapSentences|textPersonName"
+            android:maxLength="30"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/hintGray"
+            android:textSize="@dimen/_12sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:elevation="@dimen/_3sdp"
+            android:paddingHorizontal="@dimen/_5sdp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="#A19E9E" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_37sdp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_14sdp"
+                android:text="@string/cancel"
+                android:gravity="center"
+                android:fontFamily="@font/nunito_regular"
+                android:textColor="@color/new_theme_red"
+                android:textSize="@dimen/_12sdp" />
+
+            <View
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:background="#A19E9E" />
+
+            <Button
+                android:id="@+id/btnSubmit"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_37sdp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_14sdp"
+                android:text="@string/ok"
+                android:gravity="center"
+                android:fontFamily="@font/nunito_regular"
+                android:textColor="@color/new_theme_blue"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

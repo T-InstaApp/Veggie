@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" /><!--For Visibility-->
+        <import type="com.instaapp.yashaswinifresh.utils.DateUtils" />
+
+        <variable
+            name="cartListData"
+            type="com.instaapp.yashaswinifresh.network.responseModel.CartListResult" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_3sdp"
+            app:cardElevation="@dimen/_20sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_3sdp">
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_75sdp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/_1sdp"
+                            android:layout_marginRight="@dimen/_1sdp"
+                            android:background="@drawable/circular_textfield_white"
+                            android:orientation="vertical">
+
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/cart_menu_add_btn"
+                                android:layout_width="@dimen/_23sdp"
+                                android:layout_height="@dimen/_22sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:background="@drawable/ic_plus"
+                                android:backgroundTint="@color/new_theme_red" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/cart_menu_quantity_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="serif"
+                                android:gravity="center"
+                                android:text="@{cartListData.quantity.toString()}"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+
+                                android:id="@+id/cart_menu_minus_btn"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="@dimen/_2sdp"
+                                android:background="@drawable/ic_minus"
+                                android:backgroundTint="@color/new_theme_red" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <com.instaapp.yashaswinifresh.utils.RoundedImageView
+                            android:id="@+id/foodImage"
+                            android:layout_width="@dimen/_86sdp"
+                            android:layout_height="@dimen/_72sdp"
+                            android:layout_gravity="start"
+                            android:scaleType="fitXY"
+                            app:imageRound="@{cartListData.product.product_url!=null? cartListData.product.product_url:``}" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/_5sdp">
+
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/cart_menu_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="@dimen/_22sdp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/nunito_semibold"
+                                        android:text="@{cartListData.product.product_name}"
+                                        android:textColor="@color/new_theme_blue"
+                                        android:textSize="@dimen/_12sdp" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/cart_menu_amount_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_3sdp"
+                                        android:fontFamily="@font/nunito_bold"
+                                        android:gravity="start|center_vertical"
+                                        android:textColor="@color/normal_text_color"
+                                        android:textSize="@dimen/_12sdp"
+                                        app:setPriceWithCurrency="@{cartListData.price}" />
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txt_Size"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:gravity="start|center_vertical"
+                                    android:maxLines="2"
+                                    android:text=""
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp"
+                                    android:visibility="gone" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txt_add_ons"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:gravity="start|center_vertical"
+                                    android:maxLines="3"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_11sdp"
+                                    android:visibility="@{cartListData.addon_content.size > 0 ? View.VISIBLE:View.GONE}" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/txt_special_instructions"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:gravity="start|center_vertical"
+                                    android:text="@{@string/note(cartListData.extra)}"
+                                    android:textColor="@color/normal_text_color"
+                                    android:textSize="@dimen/_12sdp"
+                                    android:visibility="@{cartListData.size.size!=null?View.VISIBLE:View.GONE}" />
+
+                                <TextView
+                                    android:id="@+id/txt_detail_see_more"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:text="See More"
+                                    android:textColor="@color/heading_color"
+                                    android:textSize="@dimen/_12sdp"
+                                    android:visibility="gone" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <TextView
+                                android:id="@+id/txtNotAvailable"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:background="@color/gray_transparent"
+                                android:clickable="false"
+                                android:fontFamily="@font/nunito_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_2sdp"
+                                android:text="Out of stock"
+                                android:textColor="#E10303"
+                                android:textSize="@dimen/_12sdp"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/cart_menu_delete_btn"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:background="@drawable/ic_delete"
+                        android:backgroundTint="@color/new_theme_red"
+                        android:elevation="@dimen/_10sdp"
+                        android:gravity="center" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
+

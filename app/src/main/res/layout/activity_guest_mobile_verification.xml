@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.instaapp.yashaswinifresh.viewModel.AuthViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/layout_background"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="@string/guest_login"
+                android:textAlignment="center"
+                android:textColor="@color/heading_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <LinearLayout
+                android:id="@+id/ll_phn_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="@string/country_code"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/heading_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <EditText
+                        android:id="@+id/etCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:layout_marginVertical="5dp"
+                        android:autofillHints=""
+                        android:background="@drawable/rounded_corner_rectangle"
+                        android:digits="+-0123456789"
+                        android:drawableEnd="@drawable/ic_down"
+                        android:drawableTint="@color/white"
+                        android:elevation="@dimen/_3sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:hint="@string/_91"
+                        android:imeOptions="actionNext"
+                        android:inputType="number|text"
+                        android:maxLength="5"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@={viewModel.code}"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/hintGray"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="@string/mobile"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/heading_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <EditText
+                        android:id="@+id/etMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:layout_marginVertical="5dp"
+                        android:autofillHints=""
+                        android:background="@drawable/rounded_corner_rectangle"
+                        android:digits="0123456789"
+                        android:drawableEnd="@drawable/ic_down"
+                        android:drawableTint="@color/white"
+                        android:elevation="@dimen/_3sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:hint="Enter mobile no."
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="13"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@={viewModel.mobile}"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/hintGray"
+                        android:textSize="@dimen/_12sdp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/rect_button_background"
+                android:fontFamily="@font/nunito_regular"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="0dp"
+                android:text="@string/send_otp"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/txtLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:elevation="@dimen/_3sdp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/login_here"
+                android:textColor="@color/heading_color"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/progress"
+            layout="@layout/progress_dialog_layout" />
+
+    </RelativeLayout>
+</layout>

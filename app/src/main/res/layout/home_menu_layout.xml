@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" /><!--For Visibility-->
+
+        <variable
+            name="categoryData"
+            type="com.instaapp.yashaswinifresh.network.responseModel.CategoryResponse" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_10sdp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:adjustViewBounds="true"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/home_menu_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/no_img"
+                    android:layout_above="@+id/home_menu_name"
+                    app:image="@{categoryData.category_url}" />
+
+                <!-- android:background="#90000000" -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/white"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/home_menu_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:fontFamily="@font/nunito_bold"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:textAlignment="center"
+                    android:text="@{categoryData.category}"
+                    android:textColor="@color/main_theme_color"
+                    android:textSize="@dimen/_15sdp"
+                    android:visibility="@{categoryData.category.length() > 1 ? View.VISIBLE:View.INVISIBLE}" />
+
+                <RelativeLayout
+                    android:id="@+id/layoutOutOfStock"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:background="@color/gray_transparent"
+                    android:clickable="false"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:clickable="false"
+                        android:fontFamily="@font/nunito_regular"
+                        android:gravity="center"
+                        android:text="Out of stock"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+</layout>
