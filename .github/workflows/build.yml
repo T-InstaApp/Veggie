@@ -47,10 +47,11 @@ jobs:
           echo "New Version: $NEW_VERSION"
           echo "CURRENT_VERSION=$NEW_VERSION" >> $GITHUB_ENV
 
-      - name: Update versionName in build.gradle
+
+      - name: Update versionName in build.gradle.kts
         run: |
-          NEW_VERSION="${{ env.APK_VERSION }}"
-          sed -i "s/versionName \".*\"/versionName \"$NEW_VERSION\"/" app/build.gradle
+         NEW_VERSION="${{ env.APK_VERSION }}"
+         sed -i "s/versionName \".*\"/versionName \"$NEW_VERSION\"/" app/build.gradle.kts
         working-directory: ${{ github.workspace }}
 
       - name: Commit changes and push
