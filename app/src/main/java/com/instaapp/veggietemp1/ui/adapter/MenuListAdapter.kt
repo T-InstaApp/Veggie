@@ -32,8 +32,7 @@ class MenuListAdapter(
     private val listener: RecyclerViewClickListenerForAddToCart
 ) : RecyclerView.Adapter<MenuListAdapter.ViewHolderClass>() {
     fun updateAdapter(
-        mMenuDataModel: ArrayList<MenuResponseData>,
-        mContext: Context, callFrom: String, catID: Int, catName: String
+        mMenuDataModel: ArrayList<MenuResponseData>
     ) {
         this.mMenuDataModel.clear()
         this.mMenuDataModel = mMenuDataModel

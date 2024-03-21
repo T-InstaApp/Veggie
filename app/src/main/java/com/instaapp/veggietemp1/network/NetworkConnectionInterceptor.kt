@@ -3,12 +3,9 @@ package com.instaapp.veggietemp1.network
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import android.os.Build
 import com.instaapp.veggietemp1.utils.NoInternetException
 import okhttp3.Interceptor
-import okhttp3.Request
 import okhttp3.Response
-import java.net.SocketTimeoutException
 
 class NetworkConnectionInterceptor(context: Context) : Interceptor {
 
@@ -24,7 +21,7 @@ class NetworkConnectionInterceptor(context: Context) : Interceptor {
     }
 
     private fun isInternetAvailable(): Boolean {
-        var result = false
+        val result: Boolean
         val connectivityManager =
             applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkCapabilities = connectivityManager.activeNetwork ?: return false

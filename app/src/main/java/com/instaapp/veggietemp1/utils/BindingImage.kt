@@ -42,13 +42,13 @@ fun setPriceWithCurrency(view: TextView, price: String?) {
 }
 
 @BindingAdapter("dateFormat")
-fun formatDate(view: TextView, date: String) {
+fun formatDate(view: TextView, date1: String) {
     val old = "yyyy-MM-dd"
     val newFormat = "dd MMMM yyyy"
     var changeDate: String? = null
     try {
         val format: DateFormat = SimpleDateFormat(old, Locale.ENGLISH)
-        val date = format.parse(date)
+        val date = format.parse(date1)
         val newformat = SimpleDateFormat(newFormat, Locale.ENGLISH)
         val newDate = newformat.format(date!!)
         changeDate =

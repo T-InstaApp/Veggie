@@ -6,6 +6,7 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import com.instaapp.veggietemp1.network.repositories.AddToCartRepository
 import com.instaapp.veggietemp1.viewModel.AddToCartViewModel
 
+@Suppress("UNCHECKED_CAST")
 class AddToCartViewModelFactory (private val addToCartRepository: AddToCartRepository) :
     ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {

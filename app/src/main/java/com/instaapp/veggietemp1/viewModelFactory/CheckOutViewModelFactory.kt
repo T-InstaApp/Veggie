@@ -6,6 +6,7 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import com.instaapp.veggietemp1.network.repositories.CheckOutRepository
 import com.instaapp.veggietemp1.viewModel.CheckOutModel
 
+@Suppress("UNCHECKED_CAST")
 class CheckOutViewModelFactory(private val checkOutRepository: CheckOutRepository) :
     ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {

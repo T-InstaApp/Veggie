@@ -115,7 +115,7 @@ class SearchActivity : AppCompatActivity(), HomeListener, KodeinAware,
     }
 
     private fun initSearchView() {
-        binding.searchView.setOnEditorActionListener { v: TextView, actionId: Int, event: KeyEvent? ->
+        binding.searchView.setOnEditorActionListener { v: TextView, actionId: Int, _: KeyEvent? ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 if (v.text.toString().trim { it <= ' ' }.length > 2) {
                     val imm =

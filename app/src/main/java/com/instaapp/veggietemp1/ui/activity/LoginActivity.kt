@@ -37,6 +37,7 @@ class LoginActivity : AppCompatActivity(), AuthListener, KodeinAware {
     private lateinit var binding: ActivityLoginBinding
     private var callFromActivity: String = "Home"
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
@@ -101,7 +102,7 @@ class LoginActivity : AppCompatActivity(), AuthListener, KodeinAware {
             txtInputHeading.text = getString(R.string.user_name)
             txtHeading.text = "Reset your password"
         }
-        (dialog.findViewById<View>(R.id.btnSubmit) as Button).setOnClickListener { view: View? ->
+        (dialog.findViewById<View>(R.id.btnSubmit) as Button).setOnClickListener {
             if (edtText.text.isNullOrEmpty() || edtText.text.toString().length < 2) {
                 if (type == "User")
                     toast(getString(R.string.enter_your_email))
@@ -245,7 +246,7 @@ class LoginActivity : AppCompatActivity(), AuthListener, KodeinAware {
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT
 
         edtEmail.text = resources.getString(R.string.confirm_user)
-        (dialog.findViewById<View>(R.id.btnOk) as Button).setOnClickListener { view: View? ->
+        (dialog.findViewById<View>(R.id.btnOk) as Button).setOnClickListener {
             viewModel.mainLogin(
                 StaticValue.REST_USER_NAME,
                 StaticValue.REST_PASSWORD,

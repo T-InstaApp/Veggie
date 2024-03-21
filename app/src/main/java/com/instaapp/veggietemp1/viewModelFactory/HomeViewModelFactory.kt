@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
 import com.instaapp.veggietemp1.network.repositories.HomeRepository
 import com.instaapp.veggietemp1.viewModel.HomeViewModel
-
+@Suppress("UNCHECKED_CAST")
 class HomeViewModelFactory(private val homeRepository: HomeRepository) :
     ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {

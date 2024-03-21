@@ -82,7 +82,7 @@ class SecureTokenStorage(context: Context) {
     }
 
     fun encryptToken2(token: String): Boolean {
-        val key = getKey() ?: generateKey()
+      //  val key = getKey() ?: generateKey()
 
         val cipher = Cipher.getInstance("AES/CBC/PKCS7Padding")
         //cipher.init(Cipher.ENCRYPT_MODE, key)

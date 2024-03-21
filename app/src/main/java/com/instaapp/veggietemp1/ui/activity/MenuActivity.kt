@@ -250,11 +250,7 @@ class MenuActivity : AppCompatActivity(), HomeListener, KodeinAware,
             if (pageNo == 1) {
                 mMenuDataModel!!.addAll(data.results!!)
                 mMenuAdapter.updateAdapter(
-                    mMenuDataModel!!,
-                    applicationContext,
-                    "Menu",
-                    catID,
-                    catName
+                    mMenuDataModel!!
                 )
             } else {
                 mMenuDataModel!!.addAll(data.results!!)
@@ -265,7 +261,7 @@ class MenuActivity : AppCompatActivity(), HomeListener, KodeinAware,
 
     private fun initSearchView() {
         log("initSearchView ", " Called")
-        binding.searchView.setOnEditorActionListener(TextView.OnEditorActionListener { v: TextView, actionId: Int, event: KeyEvent? ->
+        binding.searchView.setOnEditorActionListener(TextView.OnEditorActionListener { v: TextView, actionId: Int, _: KeyEvent? ->
             log("initSearchView ", " Called $actionId ==${EditorInfo.IME_ACTION_SEARCH}")
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 log("initSearchView ", " Called ${v.text.toString().trim()}")
@@ -326,6 +322,7 @@ class MenuActivity : AppCompatActivity(), HomeListener, KodeinAware,
                         jsonObject
                     )
                 }
+
                 "Minus" -> {
                     tempProductID = data.product_id!!
                     //  txtQTY.text = (txtQTY.text.toString().toInt() - 1).toString()
@@ -360,6 +357,7 @@ class MenuActivity : AppCompatActivity(), HomeListener, KodeinAware,
                         )
                     }
                 }
+
                 "Plus" -> {
                     tempProductID = data.product_id!!
                     txtQTY.text = (txtQTY.text.toString().toInt() + 1).toString()
@@ -380,7 +378,7 @@ class MenuActivity : AppCompatActivity(), HomeListener, KodeinAware,
                         "Token " + PreferenceProvider(applicationContext).getStringValue(
                             PreferenceKey.APP_TOKEN
                         ),
-                        CartManager.getCartForProduct(data.product_id!!)!!.first.toString(),
+                        CartManager.getCartForProduct(data.product_id)!!.first.toString(),
                         jsonObject
                     )
                 }

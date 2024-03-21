@@ -101,6 +101,7 @@ class AddToCartViewModel(private val repository: AddToCartRepository) : ViewMode
     fun getSubAddonsForAddons(
         token: String, addonContentID: Int, addonContentId: Int, addonName: String
     ) {
+        log("a"," $addonContentId $addonName")
         Coroutines.main {
             try {
                 val mainLoginResponse = repository.getSubAddonsForAddons(token, addonContentID)

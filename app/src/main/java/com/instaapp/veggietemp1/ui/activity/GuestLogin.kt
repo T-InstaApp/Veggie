@@ -1,5 +1,6 @@
 package com.instaapp.veggietemp1.ui.activity
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
@@ -33,6 +34,7 @@ class GuestLogin : AppCompatActivity(), AuthListener, KodeinAware {
 
     private lateinit var binding: ActivityGuestMobileVerificationBinding
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -105,6 +107,7 @@ class GuestLogin : AppCompatActivity(), AuthListener, KodeinAware {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun verifyOTP() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -124,7 +127,7 @@ class GuestLogin : AppCompatActivity(), AuthListener, KodeinAware {
         txtInputHeading.text = getString(R.string.enter_otp)
         edtText.inputType = InputType.TYPE_CLASS_NUMBER
 
-        (dialog.findViewById<View>(R.id.btnSubmit) as Button).setOnClickListener { view: View? ->
+        (dialog.findViewById<View>(R.id.btnSubmit) as Button).setOnClickListener {
             if (edtText.text.isNullOrEmpty() || edtText.text.toString().length < 2) {
                 toast(getString(R.string.enter_otp))
             } else {

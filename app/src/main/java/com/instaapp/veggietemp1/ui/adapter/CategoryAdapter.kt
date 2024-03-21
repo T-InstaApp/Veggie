@@ -11,14 +11,11 @@ import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.instaapp.veggietemp1.network.responseModel.CategoryResponse
-import com.instaapp.veggietemp1.ui.activity.Home
 import com.instaapp.veggietemp1.ui.activity.MenuActivity
 import com.instaapp.veggietemp1.utils.checkAvailableTime
 import com.instaapp.veggietemp1.utils.log
 import com.instaapp.vegiestemp1.R
 import com.instaapp.vegiestemp1.databinding.HomeMenuLayoutBinding
-
-var selectedItem = 0
 
 class CategoryAdapter(
     private val catData: List<CategoryResponse>, private val context: Context
@@ -43,7 +40,7 @@ class CategoryAdapter(
 
 
         //TODO Call Menu Activity
-        holder.categoryListItemBinding.mainLayout.setOnClickListener { v: View? ->
+        holder.categoryListItemBinding.mainLayout.setOnClickListener { _: View? ->
             val intent = Intent(context, MenuActivity::class.java)
             intent.putExtra("cat_id", catData[position].category_id)
             intent.putExtra("cat_name", catData[position].category)

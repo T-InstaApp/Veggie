@@ -339,7 +339,7 @@ class AddToCartActivity : AppCompatActivity(), KodeinAware, SizeAdapterOnClick, 
                 count -= 1
                 binding.txtQuantity.text = count.toString()
 
-                val c: Double = productCost?.toDouble()!!
+                val c: Double = productCost.toDouble()
 
                 val b: Double = java.lang.Double.valueOf(
                     binding.txtSubTotal.text.toString()
@@ -358,7 +358,7 @@ class AddToCartActivity : AppCompatActivity(), KodeinAware, SizeAdapterOnClick, 
             if (count != 1) {
                 count -= 1
                 binding.txtQuantity.text = count.toString()
-                val c: Double = productCost?.toDouble()!!
+                val c: Double = productCost.toDouble()
                 val b: Double = java.lang.Double.valueOf(
                     binding.txtSubTotal.text.toString()
                         .replace(currencyType, "")
@@ -433,6 +433,7 @@ class AddToCartActivity : AppCompatActivity(), KodeinAware, SizeAdapterOnClick, 
                     applicationContext,
                 )
             }
+
             else -> showAlert(
                 this,
                 getString(R.string.alert),
@@ -763,7 +764,7 @@ class AddToCartActivity : AppCompatActivity(), KodeinAware, SizeAdapterOnClick, 
                 try {
                     /* val selectedItem = productContainData[position].addon_content_id
                      textID.text = selectedItem.toString()*/
-                    var extraToppingPrice = "0.0"
+                    var extraToppingPrice: String
                     val b: Double = java.lang.Double.valueOf(
                         binding.txtSubTotal.text.toString()
                             .replace(currencyType, "")
@@ -808,13 +809,13 @@ class AddToCartActivity : AppCompatActivity(), KodeinAware, SizeAdapterOnClick, 
                                     (b + (extraToppingPrice.toDouble() * count)).toString()
                                 )
                         }
-                    } catch (Ex: Exception) {
-                        Log.d("TAG", "SingleSelectionPrice: Exception $Ex")
+                    } catch (ex: Exception) {
+                        Log.d("TAG", "SingleSelectionPrice: Exception $ex")
                     }
 
 
-                } catch (Ex: Exception) {
-                    Log.d("TAG", "onResponse: Exception $Ex")
+                } catch (ex: Exception) {
+                    Log.d("TAG", "onResponse: Exception $ex")
                 }
 
             }
@@ -856,7 +857,7 @@ class AddToCartActivity : AppCompatActivity(), KodeinAware, SizeAdapterOnClick, 
         val txtExtTotalPrice = v.findViewById<TextView>(R.id.txtExtTotalPrice)
 
         //For Sub Addons
-        val txtExtraParentAddOnHeading = v.findViewById<TextView>(R.id.txtExtraParentAddOnHeading);
+        val txtExtraParentAddOnHeading = v.findViewById<TextView>(R.id.txtExtraParentAddOnHeading)
         val txtParentAddOnID = v.findViewById<TextView>(R.id.txtParentAddOnID)
 
 
@@ -903,10 +904,6 @@ class AddToCartActivity : AppCompatActivity(), KodeinAware, SizeAdapterOnClick, 
         minS: Int, maxS: Int, freeS: Int, availTime: String, txtExtraParentAddOnHeading: TextView,
         txtParentAddOnID: TextView, txtExtTotalPrice: TextView, position: Int
     ) {
-        val listItems: Array<String> = listItems12.toTypedArray()
-        val checkedItems = BooleanArray(listItems.size)
-        val selectedItems: List<String> = listItems.asList()
-        var selectionCount = 0
         var extraToppingPrice = 0.0
         var localCollectPrice = ArrayList<CollectPrice>()
         var b: Double
@@ -1000,10 +997,10 @@ class AddToCartActivity : AppCompatActivity(), KodeinAware, SizeAdapterOnClick, 
                     var selectedText = responseText.toString()
                     // Log.d("TAG", "setDataContentName: "+selectedText.trim()+"== "+selectedText.trim().endsWith(","))
                     if (selectedText.trim().endsWith(",")) {
-                        if (selectedText.contains("+"))
-                            selectedText = selectedText.trim().substring(0, selectedText.length - 2)
+                        selectedText = if (selectedText.contains("+"))
+                            selectedText.trim().substring(0, selectedText.length - 2)
                         else
-                            selectedText = selectedText.trim().substring(0, selectedText.length - 1)
+                            selectedText.trim().substring(0, selectedText.length - 1)
                     }
                     multiSelectText.text = selectedText
 
@@ -1126,10 +1123,7 @@ class AddToCartActivity : AppCompatActivity(), KodeinAware, SizeAdapterOnClick, 
         val textID = v.findViewById<TextView>(R.id.txtValueId)
         val txtMinSelection = v.findViewById<TextView>(R.id.txtMinSelection)
         val txtSelectionType = v.findViewById<TextView>(R.id.txtSelectionType)
-        val txtConditions = v.findViewById<TextView>(R.id.txtConditions)
         val autoTextView = v.findViewById<AutoCompleteTextView>(R.id.singleSelection)
-        val txtParentAddOnID = v.findViewById<TextView>(R.id.txtParentAddOnID)
-        val txtExtTotalPrice = v.findViewById<TextView>(R.id.txtExtTotalPrice)
 
         txtMinSelection.text = minS.toString()
 
@@ -1175,7 +1169,7 @@ class AddToCartActivity : AppCompatActivity(), KodeinAware, SizeAdapterOnClick, 
     }
 
     //Size Selection Operation
-    var tempSizeID = 0
+    private var tempSizeID = 0
 
     @SuppressLint("SetTextI18n", "NotifyDataSetChanged")
     override fun sizeOnClick(item: Any, name: String, prise: String, autoCall: Boolean) {
@@ -1194,7 +1188,7 @@ class AddToCartActivity : AppCompatActivity(), KodeinAware, SizeAdapterOnClick, 
             productAddon.clear()
             layoutPosition = 0
             binding.layoutAddons.removeAllViews()
-            getProductAddOnWithSize(item as Int)
+            getProductAddOnWithSize(item)
         }
     }
 
@@ -1221,7 +1215,7 @@ class AddToCartActivity : AppCompatActivity(), KodeinAware, SizeAdapterOnClick, 
             val minSelectionCount = (txtMinSelection.text.toString()).toInt()
 
             var s = textID.text.toString().trim()
-            var parentAddonForThirdLayer = txtParentAddOnID.text.toString().trim()
+            val parentAddonForThirdLayer = txtParentAddOnID.text.toString().trim()
 
             if (s.trim().endsWith(",")) {
                 s = s.substring(0, s.trim().length - 1)
@@ -1353,8 +1347,8 @@ class AddToCartActivity : AppCompatActivity(), KodeinAware, SizeAdapterOnClick, 
             }.show()
     }
 
-    var subAddonId = 0
-    var subAddonName = ""
+    private var subAddonId = 0
+    private var subAddonName = ""
 
     @SuppressLint("SetTextI18n")
     override fun onRecyclerViewItemSelect(
@@ -1376,7 +1370,7 @@ class AddToCartActivity : AppCompatActivity(), KodeinAware, SizeAdapterOnClick, 
                 val txtExtTotalPrice = v.findViewById<TextView>(R.id.txtExtTotalPrice)
 
                 if (txtParentAddOnID.text.isNotEmpty() && txtParentAddOnID.text.toString().trim()
-                        .toInt() == addonContentId as Int
+                        .toInt() == addonContentId
                 ) {
                     var tempPrice = 0.0
                     if (txtExtTotalPrice.text.trim().isNotEmpty())

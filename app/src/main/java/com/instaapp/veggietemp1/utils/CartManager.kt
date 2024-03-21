@@ -40,17 +40,17 @@ object CartManager {
     }
 
     // Function to update or add an item in cartProductIds
-    fun updateOrAddCartItem(cartItemId: Int?, productId: Int?, quantity: Int) {
+    fun updateOrAddCartItem(cartItemId1: Int?, productId1: Int?, quantity: Int) {
         // Check if the product is already in the cart
-        val existingCartItem = cartProductIds.find { it.second == productId }
+        val existingCartItem = cartProductIds.find { it.second == productId1 }
 
         if (existingCartItem != null) {
             // Update the existing item's quantity
-            val updatedCartItem = Triple(cartItemId, productId!!, quantity)
+            val updatedCartItem = Triple(cartItemId1, productId1!!, quantity)
             cartProductIds[cartProductIds.indexOf(existingCartItem)] = updatedCartItem
         } else {
             // Add a new item to the cart
-            val newCartItem = Triple(cartItemId, productId!!, quantity)
+            val newCartItem = Triple(cartItemId1, productId1!!, quantity)
             cartProductIds.add(newCartItem)
         }
 

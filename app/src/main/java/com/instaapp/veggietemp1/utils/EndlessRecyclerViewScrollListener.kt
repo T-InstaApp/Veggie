@@ -41,14 +41,14 @@ abstract class EndlessRecyclerViewScrollListener(private val mLayoutManager: Rec
         when (mLayoutManager) {
             is StaggeredGridLayoutManager -> {
                 val lastVisibleItemPositions =
-                    (mLayoutManager as StaggeredGridLayoutManager).findLastVisibleItemPositions(null)
+                    mLayoutManager.findLastVisibleItemPositions(null)
                 lastVisibleItemPosition = getLastVisibleItem(lastVisibleItemPositions)
             }
             is GridLayoutManager -> {
-                lastVisibleItemPosition = (mLayoutManager as GridLayoutManager).findLastVisibleItemPosition()
+                lastVisibleItemPosition = mLayoutManager.findLastVisibleItemPosition()
             }
             is LinearLayoutManager -> {
-                lastVisibleItemPosition = (mLayoutManager as LinearLayoutManager).findLastVisibleItemPosition()
+                lastVisibleItemPosition = mLayoutManager.findLastVisibleItemPosition()
             }
         }
 

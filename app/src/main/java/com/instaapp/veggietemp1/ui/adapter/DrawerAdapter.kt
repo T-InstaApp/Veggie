@@ -2,7 +2,6 @@ package com.instaapp.veggietemp1.ui.adapter
 
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +9,6 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
-import com.bumptech.glide.Glide
-import com.instaapp.veggietemp1.utils.PreferenceProvider
 import com.instaapp.vegiestemp1.R
 
 class DrawerAdapter(private val context: Context, private val menuArray: Array<String>) :
@@ -36,8 +33,8 @@ class DrawerAdapter(private val context: Context, private val menuArray: Array<S
         return 0
     }
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        var convertView = convertView
+    override fun getView(position: Int, convertView1: View?, parent: ViewGroup?): View {
+        var convertView = convertView1
 
         if (inflater == null) {
             inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -101,7 +98,6 @@ class DrawerAdapter(private val context: Context, private val menuArray: Array<S
                 imageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_delete))
             }
         }
-
-        return convertView!!
+        return convertView
     }
 }

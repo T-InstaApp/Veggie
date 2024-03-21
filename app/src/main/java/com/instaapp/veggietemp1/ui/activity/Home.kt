@@ -2,7 +2,6 @@ package com.instaapp.veggietemp1.ui.activity
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.location.LocationManager
@@ -60,7 +59,7 @@ class Home : AppCompatActivity(), HomeListener, KodeinAware {
     private val factory: HomeViewModelFactory by instance()
     private lateinit var binding: ActivityHomeBinding
     private lateinit var toolbar: ToolbarWithCartBinding
-    private lateinit var dialog: Dialog
+
 
     // private lateinit var progressBar: ProgressDialogLayoutBinding
     var masterCategoryData: ArrayList<MasterCategoryDataModel> = ArrayList()
@@ -73,7 +72,7 @@ class Home : AppCompatActivity(), HomeListener, KodeinAware {
 
     private val LOCATION_PERMISSION_REQUEST_CODE = 1001
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("ClickableViewAccessibility", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -193,7 +192,7 @@ class Home : AppCompatActivity(), HomeListener, KodeinAware {
     }
 
     private fun initSearchView() {
-        binding.searchView.setOnEditorActionListener(OnEditorActionListener { v: TextView, actionId: Int, event: KeyEvent? ->
+        binding.searchView.setOnEditorActionListener(OnEditorActionListener { v: TextView, actionId: Int, _: KeyEvent? ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 if (v.text.toString().trim { it <= ' ' }.length > 2) {
                     val imm =
@@ -287,6 +286,7 @@ class Home : AppCompatActivity(), HomeListener, KodeinAware {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     override fun <T> onSuccessData(dataG: T, type: String) {
         binding.progressBar.progressLayout.visibility = View.GONE
         if (type == "getMasterCat") {

@@ -1,5 +1,6 @@
 package com.instaapp.veggietemp1.ui.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -153,6 +154,7 @@ class PaymentActivity : AppCompatActivity(), KodeinAware, PaymentListener, Payme
 
     }
 
+    @SuppressLint("SetTextI18n")
     private fun extractCartData() {
         subTotal = PreferenceProvider(applicationContext).getStringValue(PreferenceKey.CART_TOTAL)
         shippingAddress = intent.getStringExtra("shippingAddress")!!
@@ -405,12 +407,12 @@ class PaymentActivity : AppCompatActivity(), KodeinAware, PaymentListener, Payme
         )
         metaData.addProperty(
             "restaurant_id",
-            PreferenceProvider(applicationContext).getIntValue(PreferenceKey.REST_ID)!!
+            PreferenceProvider(applicationContext).getIntValue(PreferenceKey.REST_ID)
         )
         metaData.addProperty("phone", phone_no)
         metaData.addProperty(
             "customer_id",
-            PreferenceProvider(applicationContext).getIntValue(PreferenceKey.USER_ID)!!.toInt()
+            PreferenceProvider(applicationContext).getIntValue(PreferenceKey.USER_ID)
         )
         metaData.addProperty(
             "special_instruction",
