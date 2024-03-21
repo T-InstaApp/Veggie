@@ -1,0 +1,139 @@
+name: BuildAndDeployAPK
+
+on:
+  push:
+    paths:
+      - .github/workflows/build.yml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      apk_name: Veggie_1
+      APK_VERSION: 1.0.0
+      Company_Name: Veggie
+      email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,niraj07.k@gmail.com
+
+    steps:
+      - name: Restore Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: 11
+          distribution: 'adopt'
+
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+
+      - name: Update AndroidManifest.xml
+        run: |
+          sed -i "s/android:label=\"[^\"]*\"/android:label=\"${{ env.apk_name }}\"/" app/src/main/AndroidManifest.xml
+
+      - name: Determine current version
+        id: determine_version
+        run: |
+          # Set a new version value here
+          NEW_VERSION="${{ env.APK_VERSION }}"  # Change this to your desired version
+          echo "New Version: $NEW_VERSION"
+          echo "CURRENT_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+
+      - name: Update versionName in build.gradle
+        run: |
+          NEW_VERSION="${{ env.APK_VERSION }}"
+          sed -i "s/versionName \".*\"/versionName \"$NEW_VERSION\"/" app/build.gradle
+        working-directory: ${{ github.workspace }}
+
+      - name: Commit changes and push
+        run: |
+          git config --local user.email "hello@instaapp.online"
+          git config --local user.name "T-InstaApp"
+          git add app/build.gradle
+          git commit -m "Update versionName to ${{ steps.determine_version.outputs.CURRENT_VERSION }}"
+          git push --force
+
+      - name: Build APK
+        run: ./gradlew assembleDebug
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "T-InstaApp"
+          git config --global user.email "hello@instaapp.online"
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        with:
+          tag_name: v1.0.0 # Replace with your desired tag name
+          release_name: Release v1.0.0 # Replace with your desired release name
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set Release Asset Name
+        run: echo "APK_NAME=${{ env.apk_name }}.apk" >> $GITHUB_ENV
+
+      - name: Rename and Upload APK
+        run: |
+          APK_NAME="${{ env.apk_name }}.apk" # Remove -debug from the APK name
+          mv app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/$APK_NAME
+          echo "Uploading APK: $APK_NAME"
+        shell: bash
+
+      - name: Upload APK as Release Asset
+        id: upload_apk
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: app/build/outputs/apk/debug/${{ env.APK_NAME }}
+          asset_name: ${{ env.APK_NAME }}
+          asset_content_type: application/vnd.android.package-archive
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Save Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+
+      # - name: Send Email Notification
+      #   if: ${{ success() }}
+      #   uses: dawidd6/action-send-mail@v3
+      #   with:
+      #     server_address: smtp.gmail.com
+      #     server_port: 465
+      #     username: instaapp.online@gmail.com
+      #     password: ${{ secrets.GMAIL_TOKEN }}
+      #     from: instaapp.online@gmail.com
+      #     subject: APK Build Notification
+      #     body: |
+      #       Here is the link to download the APK:
+      #       ${{ steps.upload_apk.outputs.browser_download_url }}
+      #     to: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,vaishnavi.charde@tissatech.com
+
+      - name: Call API
+        run: |
+          export BASE_URL="https://restaurant60-be-dev-xtpocjmkpa-uw.a.run.app/app-url-update"
+          export type="Android"
+          export restaurant_id="239"
+          export apk_name2="${{ env.apk_name }}"
+          export company_name="${{ env.Company_Name }}"
+          export email="${{ env.email }}"
+          export url="${{ steps.upload_apk.outputs.browser_download_url }}"
+          export API_URL="$BASE_URL/?url=$url&type=$type&restaurant_id=$restaurant_id&app_name=$apk_name2&emails=$email&compony_name=$company_name"
+          echo "Uploading APK: $API_URL"
+          response=$(curl -X GET $API_URL)
+          echo "API Response: $response"
+        shell: bash
