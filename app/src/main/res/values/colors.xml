@@ -5,6 +5,32 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+
+    <color name="main_theme_color">#259038</color><!--227B33-->
+    <color name="second_theme_color">#259038</color>
+    <color name="background">#FF7F01</color>
+
+    <color name="new_theme_red">#FF7F01</color>
+    <color name="new_theme_blue">#259038</color>
+    <color name="allinone">#FF7F01</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="text_color">#000000</color>
+    <color name="grey_40">#999999</color>
+    <color name="graye_payment">#666666</color>
+    <color name="transparent">#C6FFFFFF</color>
+
+    <color name="grey_60">#666666</color>
+    <color name="hintGray">#959393</color>
+    <color name="gray_transparent">#D57C7B7B</color>
+
+    <!--App new Color Code-->
+    <color name="chip_background">#EFF0F3</color>
+    <color name="normal_text_color">#000000</color>
+    <color name="heading_color">#2E5573</color>
+    <color name="grey">#4A4949</color>
+    <color name="menu_details_background">#F3F2F2</color>
+    <color name="layout_background">#F4F3F3</color>
+    <color name="graye_light">#F2F2F7</color>
 </resources>

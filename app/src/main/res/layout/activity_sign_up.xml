@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="signUpModel"
+            type="com.instaapp.veggietemp1.viewModel.AuthViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            tools:context=".activity.SignUpActivity">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/toolBar"
+                    layout="@layout/toolbar" />
+
+            </RelativeLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-50sp"
+                app:cardCornerRadius="@dimen/_100sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/profile_gradient_color"
+                    android:src="@drawable/icon_profile" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/sign_up_to_continue"
+                android:textColor="@color/heading_color"
+                android:textSize="@dimen/_15sdp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="@string/salutation"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/heading_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/txtAutoCompleteSalutation"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:layout_marginVertical="5dp"
+                        android:autofillHints=""
+                        android:background="@drawable/rounded_corner_rectangle"
+                        android:drawableEnd="@drawable/ic_down"
+                        android:drawableTint="@color/white"
+                        android:elevation="@dimen/_3sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:hint="@string/please_select_salutation"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapSentences|textPersonName"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@={signUpModel.salutation}"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/hintGray"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="@string/user_name"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/heading_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <EditText
+                        android:id="@+id/etUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:layout_marginVertical="5dp"
+                        android:autofillHints=""
+                        android:background="@drawable/rounded_corner_rectangle"
+                        android:drawableEnd="@drawable/ic_down"
+                        android:drawableTint="@color/white"
+                        android:elevation="@dimen/_3sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:hint="@string/please_enter_username"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences|textPersonName"
+                        android:maxLength="15"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@={signUpModel.userName}"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/hintGray"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="@string/first_name"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/heading_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <EditText
+                        android:id="@+id/etFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:layout_marginVertical="5dp"
+                        android:autofillHints=""
+                        android:background="@drawable/rounded_corner_rectangle"
+                        android:drawableEnd="@drawable/ic_down"
+                        android:drawableTint="@color/white"
+                        android:elevation="@dimen/_3sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:hint="@string/please_enter_first_name"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences|textPersonName"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@={signUpModel.firstName}"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/hintGray"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="@string/last_name"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/heading_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <EditText
+                        android:id="@+id/etLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:layout_marginVertical="5dp"
+                        android:autofillHints=""
+                        android:background="@drawable/rounded_corner_rectangle"
+                        android:drawableEnd="@drawable/ic_down"
+                        android:drawableTint="@color/white"
+                        android:elevation="@dimen/_3sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:hint="@string/please_enter_last_name"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences|textPersonName"
+                        android:maxLength="20"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@={signUpModel.lastName}"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/hintGray"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="@string/email"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/heading_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:layout_marginVertical="5dp"
+                        android:autofillHints=""
+                        android:background="@drawable/rounded_corner_rectangle"
+                        android:drawableEnd="@drawable/ic_down"
+                        android:drawableTint="@color/white"
+                        android:elevation="@dimen/_3sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:hint="@string/please_enter_email"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@={signUpModel.email}"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/hintGray"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_phn_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_semibold"
+                                android:text="@string/country_code"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/heading_color"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <EditText
+                                android:id="@+id/etCountryCode"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_35sdp"
+                                android:layout_marginHorizontal="@dimen/_8sdp"
+                                android:layout_marginVertical="5dp"
+                                android:autofillHints=""
+                                android:background="@drawable/rounded_corner_rectangle"
+                                android:digits="+0123456789"
+                                android:drawableEnd="@drawable/ic_down"
+                                android:drawableTint="@color/white"
+                                android:elevation="@dimen/_3sdp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:hint="@string/_91"
+                                android:imeOptions="actionNext"
+                                android:inputType="number|text"
+                                android:maxLength="5"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:text="@={signUpModel.code}"
+                                android:textColor="@color/text_color"
+                                android:textColorHint="@color/hintGray"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/nunito_semibold"
+                                android:text="@string/mobile"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/heading_color"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <EditText
+                                android:id="@+id/etMobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_35sdp"
+
+                                android:layout_marginVertical="5dp"
+                                android:autofillHints=""
+                                android:background="@drawable/rounded_corner_rectangle"
+                                android:digits="0123456789"
+                                android:elevation="@dimen/_3sdp"
+                                android:fontFamily="@font/nunito_regular"
+                                android:hint="@string/please_enter_mobile"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:maxLength="13"
+                                android:paddingStart="@dimen/_5sdp"
+                                android:text="@={signUpModel.mobile}"
+                                android:textColor="@color/text_color"
+                                android:textColorHint="@color/hintGray"
+                                android:textSize="@dimen/_12sdp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="@string/password"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/heading_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:layout_marginVertical="5dp"
+                        android:autofillHints=""
+                        android:background="@drawable/rounded_corner_rectangle"
+                        android:drawableEnd="@drawable/ic_down"
+                        android:drawableTint="@color/white"
+                        android:elevation="@dimen/_3sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:hint="@string/please_enter_password"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:maxLength="20"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@={signUpModel.password}"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/hintGray"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="@string/confirm_password"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/heading_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <EditText
+                        android:id="@+id/etConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:layout_marginVertical="5dp"
+                        android:autofillHints=""
+                        android:background="@drawable/rounded_corner_rectangle"
+                        android:drawableEnd="@drawable/ic_down"
+                        android:drawableTint="@color/white"
+                        android:elevation="@dimen/_3sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:hint="@string/please_enter_confirm_password"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:maxLength="20"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="@={signUpModel.confirmPassword}"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/hintGray"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_sign_up"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:height="@dimen/_35sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:background="@drawable/rect_button_background"
+                        android:onClick="@{signUpModel::onSignUpButton}"
+                        android:text="@string/signUp"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/txt_already_registered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:paddingBottom="@dimen/_30sdp"
+                        android:text="@string/already_registered"
+                        android:textColor="@color/new_theme_blue"
+                        android:textSize="@dimen/_15sdp" />
+                </LinearLayout>
+            </ScrollView>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <include
+            android:id="@+id/progress"
+            layout="@layout/progress_dialog_layout" />
+
+    </RelativeLayout>
+</layout>

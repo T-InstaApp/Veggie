@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtExtraParentAddOnHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/textlines"
+        android:fontFamily="@font/nunito_semibold"
+        android:padding="5dp"
+        android:text=""
+        android:textColor="@color/new_theme_blue"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/txtHeadingText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_bold"
+        android:padding="5dp"
+        android:text=""
+        android:textColor="@color/new_theme_blue"
+        android:textSize="@dimen/_12sdp" />
+
+
+    <TextView
+        android:id="@+id/txtConditions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_regular"
+        android:padding="5dp"
+        android:paddingStart="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_5sdp"
+        android:textAlignment="textEnd"
+        android:textColor="@color/new_theme_red"
+        android:textSize="@dimen/_12sdp" />
+
+    <TextView
+        android:id="@+id/txtSelectionType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_regular"
+        android:padding="5dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textSelectToppings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:autofillHints=""
+        android:background="@drawable/edit_text_design"
+        android:drawablePadding="16dp"
+        android:elevation="@dimen/_2sdp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:fontFamily="@font/nunito_regular"
+        android:gravity="center_vertical"
+        android:hint=""
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey_60"
+        android:textSize="@dimen/_12sdp"
+        app:drawableEndCompat="@drawable/ic_down"
+        app:drawableTint="@color/white" />
+
+
+    <TextView
+        android:id="@+id/txtValueId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_regular"
+        android:padding="5dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/txtMinSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_regular"
+        android:padding="5dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:id="@+id/txtParentAddOnID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_regular"
+        android:padding="5dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/txtExtTotalPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_regular"
+        android:padding="5dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="gone" />
+
+
+</LinearLayout>

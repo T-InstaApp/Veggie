@@ -73,7 +73,7 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-
+    implementation ("com.google.android.material:material:1.11.0")
 
     // Image loading
     implementation("com.github.bumptech.glide:glide:4.13.2")

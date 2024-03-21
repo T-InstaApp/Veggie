@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="contactUSData"
+            type="com.instaapp.veggietemp1.network.responseModel.RestaurantsAboutUS" />
+    </data>
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/layout_background"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolBar"
+                layout="@layout/toolbar" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/office_address"
+                    android:textColor="@color/heading_color"
+                    android:textSize="@dimen/_15sdp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/icon_phone"
+                        app:tint="@color/new_theme_blue" />
+
+                    <TextView
+                        android:id="@+id/contact_mblno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text="@{contactUSData.phone}"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/_12sdp"
+                        android:tint="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/icon_email"
+                        app:tint="@color/new_theme_blue" />
+
+                    <TextView
+                        android:id="@+id/contact_mail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text="@{contactUSData.email}"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/_12sdp"
+                        android:tint="@color/normal_text_color" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/icon_location"
+                        app:tint="@color/new_theme_blue" />
+
+                    <TextView
+                        android:id="@+id/contact_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text="@{contactUSData.address+` `+contactUSData.city+` `+contactUSData.state+` `+contactUSData.zip}"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/_12sdp"
+                        android:tint="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="@string/open_hours"
+                        android:textColor="@color/new_theme_blue"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:gravity="center"
+                        android:text="@{contactUSData.working_hours}"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <LinearLayout
+                        android:id="@+id/timeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtDay1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text=""
+                                android:textColor="@color/normal_text_color"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:layout_width="@dimen/_2sdp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/grey_40" />
+
+                            <TextView
+                                android:id="@+id/txtDayV1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text=""
+                                android:textColor="@color/normal_text_color"
+                                android:textSize="@dimen/_12sdp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtDay2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text=""
+                                android:textColor="@color/normal_text_color"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:layout_width="@dimen/_2sdp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/grey_40" />
+
+                            <TextView
+                                android:id="@+id/txtDayV2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text=""
+                                android:textColor="@color/normal_text_color"
+                                android:textSize="@dimen/_12sdp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtDay3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text=""
+                                android:textColor="@color/normal_text_color"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:layout_width="@dimen/_2sdp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/grey_40" />
+
+                            <TextView
+                                android:id="@+id/txtDayV3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text=""
+                                android:textColor="@color/normal_text_color"
+                                android:textSize="@dimen/_12sdp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtDay4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text=""
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:layout_width="@dimen/_2sdp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/grey_40" />
+
+                            <TextView
+                                android:id="@+id/txtDayV4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text=""
+                                android:textSize="@dimen/_12sdp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtDay5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text=""
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:layout_width="@dimen/_2sdp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/grey_40" />
+
+                            <TextView
+                                android:id="@+id/txtDayV5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text=""
+                                android:textSize="@dimen/_12sdp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtDay6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text=""
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:layout_width="@dimen/_2sdp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/grey_40" />
+
+                            <TextView
+                                android:id="@+id/txtDayV6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text=""
+                                android:textSize="@dimen/_12sdp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtDay7"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text=""
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:layout_width="@dimen/_2sdp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/grey_40" />
+
+                            <TextView
+                                android:id="@+id/txtDayV7"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/nunito_regular"
+                                android:text=""
+                                android:textSize="@dimen/_12sdp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/contact_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:tint="@color/black"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/contact_time_sunday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:textColor="@color/new_theme_red"
+                        android:textSize="@dimen/_14sdp"
+                        android:tint="@color/black"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/progress"
+            layout="@layout/progress_dialog_layout" />
+    </RelativeLayout>
+</layout>

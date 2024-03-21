@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.VeggieTemp1" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- Use Theme.AppCompat as parent -->
+    <style name="Theme.VeggieTemp1" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Add your customizations here -->
+    </style>
 </resources>
+
+
+<!--
+    <?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<style name="Theme.VeggieTemp1" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>-->
