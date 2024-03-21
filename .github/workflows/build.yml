@@ -58,7 +58,7 @@ jobs:
         run: |
           git config --local user.email "hello@instaapp.online"
           git config --local user.name "T-InstaApp"
-          git add app/build.gradle
+          git add app/build.gradle.kts
           git commit -m "Update versionName to ${{ steps.determine_version.outputs.CURRENT_VERSION }}"
           git push --force
 
