@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: veggie11
-      APK_VERSION: 1.1.98
+      apk_name: vegshop
+      APK_VERSION: 1.1.99
       Company_Name: Veggie
       email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,niraj07.k@gmail.com
 
@@ -74,8 +74,8 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
-          tag_name: v1.1.98 # Replace with your desired tag name
-          release_name: Release v1.1.98 # Replace with your desired release name
+          tag_name: v1.1.99 # Replace with your desired tag name
+          release_name: Release v1.1.99 # Replace with your desired release name
           draft: false
           prerelease: false
         env:
