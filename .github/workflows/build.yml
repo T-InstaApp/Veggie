@@ -14,7 +14,7 @@ jobs:
       APK_VERSION: 1.2.12
       Company_Name: Veggie
       LOGO_URL: test
-      email: niraj.kumar@tissatech.com, vishal.upadhyay@tissatech.com, vu78657@gmail.com,  vishalupadhyay8550@gmail.com
+      email: niraj.kumar@tissatech.com, vishal.upadhyay@tissatech.com
 
     steps:
       - name: Restore Cache
