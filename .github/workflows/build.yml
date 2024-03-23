@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: test111
+      apk_name: mytest
       APK_VERSION: 1.2.7
       Company_Name: Veggie
       email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,roshan.shendre@tissatech.com, vaishnavi.charde@tissatech.com
