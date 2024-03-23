@@ -11,7 +11,7 @@ jobs:
 
     env:
       apk_name: test1
-      APK_VERSION: 1.2.10
+      APK_VERSION: 1.2.11
       Company_Name: Veggie
       LOGO_URL: test
       email: niraj.kumar@tissatech.com, vishal.upadhyay@tissatech.com, vu78657@gmail.com,  vishalupadhyay8550@gmail.com
@@ -75,8 +75,8 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
-          tag_name: v1.2.10 # Replace with your desired tag name
-          release_name: Release v1.2.10 # Replace with your desired release name
+          tag_name: v1.2.11 # Replace with your desired tag name
+          release_name: Release v1.2.11 # Replace with your desired release name
           draft: false
           prerelease: false
         env:
