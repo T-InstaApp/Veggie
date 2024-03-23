@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: newtest1
+      apk_name: demoewtest1
       APK_VERSION: 1.2.9
       Company_Name: Veggie
       LOGO_URL: test
