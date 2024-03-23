@@ -13,6 +13,7 @@ jobs:
       apk_name: mytest
       APK_VERSION: 1.2.7
       Company_Name: Veggie
+      LOGO_URL: test
       email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,roshan.shendre@tissatech.com, vaishnavi.charde@tissatech.com
 
     steps:
