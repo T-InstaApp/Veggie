@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: mytest
-      APK_VERSION: 1.2.8
+      apk_name: newtest
+      APK_VERSION: 1.2.9
       Company_Name: Veggie
       LOGO_URL: test
-      email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,roshan.shendre@tissatech.com, vaishnavi.charde@tissatech.com
+      email: niraj.kumar@tissatech.com, vishal.upadhyay@tissatech.com, vu78657@gmail.com,  vishalupadhyay8550@gmail.com
 
     steps:
       - name: Restore Cache
