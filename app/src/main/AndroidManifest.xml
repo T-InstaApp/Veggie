@@ -12,7 +12,7 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:roundIcon="@drawable/logon"
+        android:icon="@drawable/logon"
         android:label="ufresh_18"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
