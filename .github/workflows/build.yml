@@ -11,7 +11,7 @@ jobs:
 
     env:
       apk_name: ufresh
-      APK_VERSION: 1.2.15
+      APK_VERSION: 1.2.16
       Company_Name: Veggie
       LOGO_URL: https://cdn.logojoy.com/wp-content/uploads/20220329171603/dating-app-logo-example.jpg
       email: niraj.kumar@tissatech.com, vishal.upadhyay@tissatech.com
@@ -46,6 +46,7 @@ jobs:
         run: |
           sed -i "s#android:label=\"[^\"]*\"#android:label=\"${{ env.apk_name }}\"#" app/src/main/AndroidManifest.xml
           sed -i "s#android:icon=\"[^\"]*\"#android:icon=\"@drawable/logon\"#" app/src/main/AndroidManifest.xml
+          sed -i "s#android:icon=\"[^\"]*\"#android:roundIcon=\"@drawable/logon\"#" app/src/main/AndroidManifest.xml
 
       - name: Determine current version
         id: determine_version
@@ -82,8 +83,8 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
-          tag_name: v1.2.15 # Replace with your desired tag name
-          release_name: Release v1.2.15 # Replace with your desired release name
+          tag_name: v1.2.16 # Replace with your desired tag name
+          release_name: Release v1.2.16 # Replace with your desired release name
           draft: false
           prerelease: false
         env:
