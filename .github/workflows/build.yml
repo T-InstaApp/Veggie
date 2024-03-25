@@ -44,8 +44,8 @@ jobs:
 
       - name: Update AndroidManifest.xml
         run: |
-          sed -i "s/android:label=\"[^\"]*\"/android:label=\"${{ env.apk_name }}\"/" app/src/main/AndroidManifest.xml
-          sed -i "s/android:icon=\"[^\"]*\"/android:icon=\"@drawable/logon\"/" app/src/main/AndroidManifest.xml
+          sed -i "s#android:label=\"[^\"]*\"#android:label=\"${{ env.apk_name }}\"#" app/src/main/AndroidManifest.xml
+          sed -i "s#android:icon=\"[^\"]*\"#android:icon=\"@drawable/logon\"#" app/src/main/AndroidManifest.xml
 
       - name: Determine current version
         id: determine_version
