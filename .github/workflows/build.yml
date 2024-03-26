@@ -14,7 +14,7 @@ jobs:
       APK_VERSION: 1.2.29
       Company_Name: Veggie
       LOGO_URL: https://cdn.logojoy.com/wp-content/uploads/20220329171603/dating-app-logo-example.jpg
-      email: niraj.kumar@tissatech.com, vishal.upadhyay@tissatech.com
+      email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com
 
     steps:
       - name: Restore Cache
