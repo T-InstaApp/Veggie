@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: myapp12
-      APK_VERSION: 1.2.29
+      apk_name: myapp13
+      APK_VERSION: 1.2.30
       Company_Name: Veggie
       LOGO_URL: https://cdn.logojoy.com/wp-content/uploads/20220329171603/dating-app-logo-example.jpg
-      email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com
+      email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,vaishnavi.charde@tissatech.com,roshan.shendre@tissatech.com
 
     steps:
       - name: Restore Cache
@@ -82,8 +82,8 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
-          tag_name: v1.2.29 # Replace with your desired tag name
-          release_name: Release v1.2.29 # Replace with your desired release name
+          tag_name: v1.2.30 # Replace with your desired tag name
+          release_name: Release v1.2.30 # Replace with your desired release name
           draft: false
           prerelease: false
         env:
