@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: myapp11_19
+      apk_name: myapp11
       APK_VERSION: 1.2.27
       Company_Name: Veggie
       LOGO_URL: https://cdn.logojoy.com/wp-content/uploads/20220329171603/dating-app-logo-example.jpg
