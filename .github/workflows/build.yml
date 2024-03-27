@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: newapp111
-      APK_VERSION: 1.2.43
+      apk_name: newfreshveg
+      APK_VERSION: 1.2.44
       Company_Name: Veggie
       LOGO_URL: https://cdn.logojoy.com/wp-content/uploads/20220329171603/dating-app-logo-example.jpg
       email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,roshan.shendre@tissatech.com
@@ -81,8 +81,8 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
-          tag_name: v1.2.43 # Replace with your desired tag name
-          release_name: Release v1.2.43 # Replace with your desired release name
+          tag_name: v1.2.44 # Replace with your desired tag name
+          release_name: Release v1.2.44 # Replace with your desired release name
           draft: false
           prerelease: false
         env:
