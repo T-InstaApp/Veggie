@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: freshievegie11
-      APK_VERSION: 1.2.54
+      apk_name: freshievegie12
+      APK_VERSION: 1.2.55
       Company_Name: Veggie
-      LOGO_URL: https://storage.googleapis.com/restaurant60-dev-media/Vegisizzla.jpg
+      LOGO_URL: https://storage.googleapis.com/restaurant60-dev-media/logo_img.png
       email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,roshan.shendre@tissatech.com
     steps:
       - name: Restore Cache
@@ -81,8 +81,8 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
-          tag_name: v1.2.54 # Replace with your desired tag name
-          release_name: Release v1.2.54 # Replace with your desired release name
+          tag_name: v1.2.55 # Replace with your desired tag name
+          release_name: Release v1.2.55 # Replace with your desired release name
           draft: false
           prerelease: false
         env:
