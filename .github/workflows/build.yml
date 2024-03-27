@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: demoapp767
+      apk_name: app11
       APK_VERSION: 1.2.64
       Company_Name: Veggie
       LOGO_URL: https://storage.googleapis.com/restaurant60-dev-media/logo_img.png
