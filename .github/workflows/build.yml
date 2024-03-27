@@ -11,7 +11,7 @@ jobs:
 
     env:
       apk_name: freshievegie138
-      APK_VERSION: 1.2.58
+      APK_VERSION: 1.2.59
       Company_Name: Veggie
       LOGO_URL: https://storage.googleapis.com/restaurant60-dev-media/logo_img.png
       email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,vaishnavi.charde@tissatech.com,roshan.shendre@tissatech.com
@@ -81,8 +81,8 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
-          tag_name: v1.2.58 # Replace with your desired tag name
-          release_name: Release v1.2.58 # Replace with your desired release name
+          tag_name: v1.2.59 # Replace with your desired tag name
+          release_name: Release v1.2.59 # Replace with your desired release name
           draft: false
           prerelease: false
         env:
