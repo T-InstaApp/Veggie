@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: Veggie_2
-      APK_VERSION: 1.0.1
+      apk_name: Veggie805
+      APK_VERSION: 1.2.72
       Company_Name: Veggie
-      email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,niraj07.k@gmail.com
-
+      LOGO_URL: https://storage.googleapis.com/restaurant60-dev-media/logo_img.png
+      email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,roshanshendre24@gmail.com,vaishnavi.charde@tissatech.com
     steps:
       - name: Restore Cache
         uses: actions/cache@v2
@@ -34,11 +34,18 @@ jobs:
 
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
+ 
+      - name: Download App Logo
+        run: |
+          if [ "${{ env.LOGO_URL }}" != "test" ]; then
+          curl -o app/src/main/res/drawable/logon.png $LOGO_URL
+          fi
 
       - name: Update AndroidManifest.xml
         run: |
-          sed -i "s/android:label=\"[^\"]*\"/android:label=\"${{ env.apk_name }}\"/" app/src/main/AndroidManifest.xml
-
+          sed -i "s#android:label=\"[^\"]*\"#android:label=\"${{ env.apk_name }}\"#" app/src/main/AndroidManifest.xml
+          sed -i "s#android:icon=\"[^\"]*\"#android:icon=\"@drawable/logon\"#" app/src/main/AndroidManifest.xml
+        
       - name: Determine current version
         id: determine_version
         run: |
@@ -74,8 +81,8 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
-          tag_name: v1.0.1 # Replace with your desired tag name
-          release_name: Release v1.0.1 # Replace with your desired release name
+          tag_name: v1.2.72 # Replace with your desired tag name
+          release_name: Release v1.2.72 # Replace with your desired release name
           draft: false
           prerelease: false
         env:
@@ -109,26 +116,11 @@ jobs:
             ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
 
-      # - name: Send Email Notification
-      #   if: ${{ success() }}
-      #   uses: dawidd6/action-send-mail@v3
-      #   with:
-      #     server_address: smtp.gmail.com
-      #     server_port: 465
-      #     username: instaapp.online@gmail.com
-      #     password: ${{ secrets.GMAIL_TOKEN }}
-      #     from: instaapp.online@gmail.com
-      #     subject: APK Build Notification
-      #     body: |
-      #       Here is the link to download the APK:
-      #       ${{ steps.upload_apk.outputs.browser_download_url }}
-      #     to: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,vaishnavi.charde@tissatech.com
-
       - name: Call API
         run: |
           export BASE_URL="https://restaurant60-be-dev-xtpocjmkpa-uw.a.run.app/app-url-update"
           export type="Android"
-          export restaurant_id="239"
+          export restaurant_id="701"
           export apk_name2="${{ env.apk_name }}"
           export company_name="${{ env.Company_Name }}"
           export email="${{ env.email }}"
