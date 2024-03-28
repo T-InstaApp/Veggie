@@ -80,12 +80,12 @@ class SplashActivity : AppCompatActivity(), KodeinAware,
 
     private fun dialogShowMsg() {
         if (PreferenceProvider(applicationContext).getSplashScreenImageUrl().equals("N/A")) {
-            Glide.with(this).load(ContextCompat.getDrawable(this, R.drawable.logo1))
+            Glide.with(this).load(ContextCompat.getDrawable(this, R.drawable.logo))
                 .into(binding.txtAppLogo)
             binding.txtAppName.text = getString(R.string.app_name)
         } else {
             Glide.with(this).load(PreferenceProvider(applicationContext).getSplashScreenImageUrl())
-                .into(binding.txtAppLogo)
+                .into(binding.imageLogo)
             binding.txtAppName.text =
                 PreferenceProvider(applicationContext).getStringValue(PreferenceKey.APP_NAME)
         }
