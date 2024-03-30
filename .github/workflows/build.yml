@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: tryNow
-      APK_VERSION: 1.2.89
+      apk_name: cc
+      APK_VERSION: 1.2.90
       Company_Name: Veggie
       LOGO_URL: https://storage.googleapis.com/restaurant60-dev-media/logo_img.png
-      email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,vaishnavi.charde@tissatech.com
+      email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,cc@f
     steps:
       - name: Restore Cache
         uses: actions/cache@v2
@@ -81,8 +81,8 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
-          tag_name: v1.2.89 # Replace with your desired tag name
-          release_name: Release v1.2.89 # Replace with your desired release name
+          tag_name: v1.2.90 # Replace with your desired tag name
+          release_name: Release v1.2.90 # Replace with your desired release name
           draft: false
           prerelease: false
         env:
@@ -120,7 +120,7 @@ jobs:
         run: |
           export BASE_URL="https://restaurant60-be-dev-xtpocjmkpa-uw.a.run.app/app-url-update"
           export type="Android"
-          export restaurant_id="727"
+          export restaurant_id="728"
           export apk_name2="${{ env.apk_name }}"
           export company_name="${{ env.Company_Name }}"
           export email="${{ env.email }}"
