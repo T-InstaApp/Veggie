@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: store17
-      APK_VERSION: 1.3.52
+      apk_name: store20
+      APK_VERSION: 1.3.53
       Company_Name: Veggie
       LOGO_URL: https://storage.googleapis.com/restaurant60-dev-media/logo_img.png
       email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,vaishnavi.charde@tissatech.com
@@ -81,8 +81,8 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
-          tag_name: v1.3.52 # Replace with your desired tag name
-          release_name: Release v1.3.52 # Replace with your desired release name
+          tag_name: v1.3.53 # Replace with your desired tag name
+          release_name: Release v1.3.53 # Replace with your desired release name
           draft: false
           prerelease: false
         env:
@@ -120,7 +120,7 @@ jobs:
         run: |
           export BASE_URL="https://restaurant60-be-dev-xtpocjmkpa-uw.a.run.app/app-url-update"
           export type="Android"
-          export restaurant_id="924"
+          export restaurant_id="925"
           export apk_name2="${{ env.apk_name }}"
           export company_name="${{ env.Company_Name }}"
           export email="${{ env.email }}"
