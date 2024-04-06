@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: grocerystore2
-      APK_VERSION: 1.3.65
+      apk_name: store101
+      APK_VERSION: 1.3.66
       Company_Name: Veggie
-      LOGO_URL: https://storage.googleapis.com/restaurant60-dev-media/veges1.jpeg
-      email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,roshan.shendre@tissatech.com,vishal.upadhyay@tissatech.com
+      LOGO_URL: https://storage.googleapis.com/restaurant60-dev-media/VegetableShopVintageLogoDesignGraphics583164111580x386.jpg
+      email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,vaishanvi.charde@tissatech.com
     steps:
       - name: Restore Cache
         uses: actions/cache@v2
@@ -81,8 +81,8 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
-          tag_name: v1.3.65 # Replace with your desired tag name
-          release_name: Release v1.3.65 # Replace with your desired release name
+          tag_name: v1.3.66 # Replace with your desired tag name
+          release_name: Release v1.3.66 # Replace with your desired release name
           draft: false
           prerelease: false
         env:
@@ -120,7 +120,7 @@ jobs:
         run: |
           export BASE_URL="https://restaurant60-be-dev-xtpocjmkpa-uw.a.run.app/app-url-update"
           export type="Android"
-          export restaurant_id="940"
+          export restaurant_id="941"
           export apk_name2="${{ env.apk_name }}"
           export company_name="${{ env.Company_Name }}"
           export email="${{ env.email }}"
