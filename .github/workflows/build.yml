@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: veges3
-      APK_VERSION: 1.3.74
+      apk_name: veges4
+      APK_VERSION: 1.3.75
       Company_Name: Veggie
       LOGO_URL: https://storage.googleapis.com/restaurant60-dev-media/MicrosoftTeamsimage18.png
-      email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,ryjowu@closetab.email
+      email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,byhaqy@citmo.net
     steps:
       - name: Restore Cache
         uses: actions/cache@v2
@@ -81,8 +81,8 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         with:
-          tag_name: v1.3.74 # Replace with your desired tag name
-          release_name: Release v1.3.74 # Replace with your desired release name
+          tag_name: v1.3.75 # Replace with your desired tag name
+          release_name: Release v1.3.75 # Replace with your desired release name
           draft: false
           prerelease: false
         env:
@@ -120,7 +120,7 @@ jobs:
         run: |
           export BASE_URL="https://restaurant60-be-dev-xtpocjmkpa-uw.a.run.app/app-url-update"
           export type="Android"
-          export restaurant_id="953"
+          export restaurant_id="954"
           export apk_name2="${{ env.apk_name }}"
           export company_name="${{ env.Company_Name }}"
           export email="${{ env.email }}"
