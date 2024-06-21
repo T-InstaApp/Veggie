@@ -29,6 +29,7 @@ import java.util.*
 
 private const val DELAY_TIME = 1000
 
+// Committed on 21-06-24
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity(), KodeinAware,
     HomeListener {//InAppUpdateManager.InAppUpdateHandler
